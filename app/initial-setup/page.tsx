@@ -28,7 +28,7 @@ import {
 } from "@/lib/api" // API fonksiyonlarını ve yeni DB tiplerini import et
 import { toast } from "@/hooks/use-toast"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useTranslation } from "next-i18next"
+import { useLanguage } from "@/contexts/language-context"
 
 // UI'da kullanılacak tam veri modelleri (kişisel veriler dahil)
 // These interfaces should ideally match LocalKineDBData interfaces for consistency
@@ -49,7 +49,7 @@ export default function InitialSetupPage() {
   const [selectedTeacherLocalId, setSelectedTeacherLocalId] = useState<string | undefined>(undefined)
   const [selectedSchoolId, setSelectedSchoolId] = useState<string | undefined>("1") // Mock school ID for now
   const router = useRouter()
-  const { t } = useTranslation()
+  const { translate:t } = useLanguage()
   const [activeTab, setActiveTab] = useState("students")
   const fileInputRef = useRef<HTMLInputElement>(null)
 
