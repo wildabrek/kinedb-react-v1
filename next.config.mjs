@@ -1,25 +1,18 @@
-let userConfig = undefined
-try {
-  // try to import ESM first
-  userConfig = await import('./v0-user-next.config.mjs')
-} catch (e) {
-  try {
-    // fallback to CJS import
-    userConfig = await import("./v0-user-next.config");
-  } catch (innerError) {
-    // ignore error
-  }
-}
+// next.config.mjs
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true, // Geliştirme sırasında olası sorunları görmek için true yapmanız önerilir.
+  
+  // Hata gizleme seçeneklerini kaldırın veya false yapın.
+  // Bu, kod kalitenizi artırmanıza yardımcı olur.
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
+
   images: {
     unoptimized: true,
   },
@@ -28,37 +21,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-
-  // 🔥 Burası önemli: Büyük paketleri server dışına al
-  serverExternalPackages: [
-    '@google/genai',
-    '@google/generative-ai',
-    'generative-ai',
-    'jspdf',
-    'html2canvas',
-    'fs',
-    'fs-promise',
-    'path',
-  ],
+  
+  // Hatalı olduğu için bu bloğu TAMAMEN KALDIRIN.
+  // serverExternalPackages: [ ... ],
 }
 
-if (userConfig) {
-  // ESM imports will have a "default" property
-  const config = userConfig.default || userConfig
-
-  for (const key in config) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...config[key],
-      }
-    } else {
-      nextConfig[key] = config[key]
-    }
-  }
-}
-
-export default nextConfig
+export default nextConfig;
