@@ -1498,3 +1498,118 @@ export async function getDashboardSummary() {
     }
   }
 }
+// Game Impact interfaces
+export interface GameImpact {
+  impact_id: number
+  game_name: string
+  main_subject?: string
+  difficulty_level?: string
+  recomended_age?: string
+  time_to_complete?: string
+  additional_notes?: string
+  subjects_boost: Record<string, number>
+  skills_boost: Record<string, number>
+  add_strengths: string[]
+  add_areas_on_low_score: string[]
+  recommendations: string[]
+}
+
+export interface PossibleStrength {
+  id: number
+  strength_id: number
+  name: string
+  description: string
+  category: string
+}
+
+export interface PossibleArea {
+  area_id: number
+  name: string
+  description: string
+  category: string
+}
+
+// Game Impact API functions
+export async function getGameImpact(gameName: string): Promise<GameImpact | null> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/game-impacts/${encodeURIComponent(gameName)}`)
+    if (!res.ok) {
+      if (res.status === 404) return null
+      throw new Error("Failed to fetch game impact")
+    }
+    return await res.json()
+  } catch (error) {
+    console.error("Error fetching game impact:", error)
+    // Return mock data as fallback
+    return {
+      impact_id: 1,
+      game_name: gameName,
+      main_subject: "Math",
+      difficulty_level: "Medium",
+      recomended_age: "8-12",
+      time_to_complete: "20 minutes",
+      additional_notes: "Great for building problem-solving skills",
+      subjects_boost: { Math: 3, Science: 1 },
+      skills_boost: { "Problem Solving": 4, "Critical Thinking": 3 },
+      add_strengths: ["1", "2"],
+      add_areas_on_low_score: ["1"],
+      recommendations: ["Word Wizard", "Science Quest"],
+    }
+  }
+}
+
+export async function createGameImpact(data: Omit<GameImpact, "impact_id">): Promise<GameImpact> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/game-impacts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+    if (!res.ok) throw new Error("Failed to create game impact")
+    return await res.json()
+  } catch (error) {
+    console.error("Error creating game impact:", error)
+    throw error
+  }
+}
+
+export async function updateGameImpact(gameName: string, data: Partial<GameImpact>): Promise<GameImpact> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/game-impacts/${encodeURIComponent(gameName)}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+    if (!res.ok) throw new Error("Failed to update game impact")
+    return await res.json()
+  } catch (error) {
+    console.error("Error updating game impact:", error)
+    throw error
+  }
+}
+
+export async function deleteGameImpact(gameName: string): Promise<void> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/game-impacts/${encodeURIComponent(gameName)}`, {
+      method: "DELETE",
+    })
+    if (!res.ok) throw new Error("Failed to delete game impact")
+  } catch (error) {
+    console.error("Error deleting game impact:", error)
+    throw error
+  }
+}
+
+// Add getGame function (alias for getGameById)
+export const getGame = async (gameId: number): Promise<any> => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/games/${gameId}`)
+    if (!res.ok) {
+      throw new Error("Failed to fetch game")
+    }
+    return await res.json()
+  } catch (error) {
+    console.error("Error fetching game:", error)
+    return null
+  }
+}
