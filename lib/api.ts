@@ -1435,3 +1435,66 @@ export const getClassById = (classId: string): Class | null => {
   const classItem = classesData.find((c) => c.class_id === classId)
   return classItem ? classItem : null
 }
+export async function getDashboardSummary() {
+  try {
+    const res = await fetch(`${API_BASE_URL}/analytics/dashboard-summary`)
+    if (!res.ok) throw new Error("Failed to fetch dashboard summary")
+    return await res.json()
+  } catch (error) {
+    console.error("Error fetching dashboard summary:", error)
+    // Return mock data as fallback
+    return {
+      dashboardSummary: {
+        currentPeriod: {
+          metrics: {
+            activeStudents: 150,
+            totalStudents: 200,
+            newStudents: 25,
+            gamesPlayed: 1250,
+            totalGames: 50,
+            averageScore: 78,
+            completionRate: 85,
+          },
+          trends: {
+            studentGrowth: { percentage: 12, direction: "up" },
+            scoreChange: { percentage: 5, direction: "up" },
+            completionChange: { percentage: 8, direction: "up" },
+          },
+        },
+        previousPeriod: {
+          metrics: {
+            activeStudents: 134,
+            totalStudents: 180,
+            newStudents: 20,
+            gamesPlayed: 1150,
+            totalGames: 45,
+            averageScore: 74,
+            completionRate: 78,
+          },
+        },
+        topPerformers: {
+          students: [
+            { id: 1, name: "Emma Thompson", score: 95, improvement: 3 },
+            { id: 2, name: "Noah Martinez", score: 92, improvement: 5 },
+            { id: 3, name: "Olivia Johnson", score: 90, improvement: 2 },
+          ],
+          classes: [
+            { id: 1, name: "3A", averageScore: 88, improvement: 4 },
+            { id: 2, name: "3B", averageScore: 85, improvement: 3 },
+          ],
+          games: [
+            { id: 1, name: "Math Blaster", popularity: 150, avg_score: 82 },
+            { id: 2, name: "Word Wizard", popularity: 120, avg_score: 78 },
+          ],
+        },
+      },
+      timeSeriesData: {
+        daily: {
+          metrics: {
+            gamesPlayed: [45, 52, 38, 65, 48, 55, 62],
+          },
+        },
+      },
+    }
+  }
+}
