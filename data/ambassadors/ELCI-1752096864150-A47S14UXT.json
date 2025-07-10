@@ -28,10 +28,10 @@
     "taxNumber": "434235264325"
   },
   "performance": {
-    "totalStudents": 4,
-    "totalEarnings": 20,
+    "totalStudents": 5,
+    "totalEarnings": 25,
     "pendingEarnings": 0,
-    "thisMonthStudents": 4
+    "thisMonthStudents": 5
   },
   "engagement": {
     "recentActivities": [],
@@ -44,25 +44,25 @@
         "name": "Bronze Ambassador",
         "requirement": "50+ öğrenci",
         "earned": false,
-        "progress": 7
+        "progress": 8
       },
       {
         "name": "Silver Ambassador",
         "requirement": "200+ öğrenci",
         "earned": false,
-        "progress": 3
+        "progress": 4
       },
       {
         "name": "Gold Ambassador",
         "requirement": "500+ öğrenci",
         "earned": false,
-        "progress": 2
+        "progress": 3
       },
       {
         "name": "Diamond Ambassador",
         "requirement": "1000+ öğrenci",
         "earned": false,
-        "progress": 1
+        "progress": 2
       }
     ]
   },

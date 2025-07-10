@@ -7,7 +7,7 @@ export async function GET(
   const gameId = params.id
 
   // Get the API URL from environment variables or use default
-  const apiUrl = process.env.API_URL || 'http://localhost:8000'
+  const apiUrl = process.env.API_URL || 'https://kinefast.onrender.com'
 
   try {
     const response = await fetch(`${apiUrl}/games/${gameId}`, {

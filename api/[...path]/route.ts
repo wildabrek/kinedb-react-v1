@@ -12,7 +12,7 @@ export async function GET(
   const queryString = searchParams ? `?${searchParams}` : ''
 
   // Get the API URL from environment variables or use default
-  const apiUrl = process.env.API_URL || 'http://localhost:8000'
+  const apiUrl = process.env.API_URL || 'https://kinefast.onrender.com'
 
   try {
     const response = await fetch(`${apiUrl}/${path}${queryString}`, {
@@ -40,7 +40,7 @@ export async function POST(
   const path = params.path.join('/')
 
   // Get the API URL from environment variables or use default
-  const apiUrl = process.env.API_URL || 'http://localhost:8000'
+  const apiUrl = process.env.API_URL || 'https://kinefast.onrender.com'
 
   try {
     const body = await request.json()
@@ -71,7 +71,7 @@ export async function PUT(
   const path = params.path.join('/')
 
   // Get the API URL from environment variables or use default
-  const apiUrl = process.env.API_URL || 'http://localhost:8000'
+  const apiUrl = process.env.API_URL || 'https://kinefast.onrender.com'
 
   try {
     const body = await request.json()
@@ -102,7 +102,7 @@ export async function DELETE(
   const path = params.path.join('/')
 
   // Get the API URL from environment variables or use default
-  const apiUrl = process.env.API_URL || 'http://localhost:8000'
+  const apiUrl = process.env.API_URL || 'https://kinefast.onrender.com'
 
   try {
     const response = await fetch(`${apiUrl}/${path}`, {

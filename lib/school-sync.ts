@@ -25,7 +25,7 @@ export interface SchoolSyncStatus {
 }
 
 // Mock API base URL - in production this would come from environment variables
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://kinefast.onrender.com"
 
 export async function syncSchoolsWithDatabase(): Promise<SyncResult> {
   const localData = getLocalData()

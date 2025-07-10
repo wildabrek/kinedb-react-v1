@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "School ID is required" }, { status: 400 })
   }
 
-  const apiUrl = process.env.API_URL || "http://localhost:8000"
+  const apiUrl = process.env.API_URL || "https://kinefast.onrender.com"
 
   try {
     const response = await fetch(`${apiUrl}/students?school_id=${schoolId}`, {

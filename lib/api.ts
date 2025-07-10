@@ -1,6 +1,6 @@
 import { safeStorage } from "@/lib/utils/safeStorage"
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || "http://localhost:8000"
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || "https://kinefast.onrender.com"
 
 // --- API'den gelecek veritabanı modelleri (kişisel veri içermez) ---
 export interface StudentDB {

@@ -38,13 +38,13 @@ export default function GamePlaySetupPage() {
       setIsLoading(true)
       try {
         // Fetch game data
-        const gameResponse = await fetch(`http://localhost:8000/games/${gameId}`)
+        const gameResponse = await fetch(`https://kinefast.onrender.com/games/${gameId}`)
         if (!gameResponse.ok) throw new Error(`Failed to load game: ${gameResponse.status}`)
         const game = await gameResponse.json()
         setGameData(game || { name: `Game ${gameId}`, description: "No description available" })
 
         // Fetch classes
-        const classesResponse = await fetch("http://localhost:8000/classes")
+        const classesResponse = await fetch("https://kinefast.onrender.com/classes")
         if (!classesResponse.ok) throw new Error(`Failed to load classes: ${classesResponse.status}`)
         const classesData = await classesResponse.json()
         setAllClasses(classesData || [])
@@ -68,7 +68,7 @@ export default function GamePlaySetupPage() {
     if (selectedClassId) {
       const fetchClassData = async () => {
         try {
-          const classResponse = await fetch(`http://localhost:8000/classes/${selectedClassId}`)
+          const classResponse = await fetch(`https://kinefast.onrender.com/classes/${selectedClassId}`)
           if (!classResponse.ok) throw new Error(`Failed to load class: ${classResponse.status}`)
           const classData = await classResponse.json()
           setSelectedClass(classData || null)
@@ -162,7 +162,7 @@ export default function GamePlaySetupPage() {
     try {
       // Create game sessions for all selected students
       for (const student of selectedStudents) {
-        await fetch("http://localhost:8000/gamesession/start", {
+        await fetch("https://kinefast.onrender.com/gamesession/start", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

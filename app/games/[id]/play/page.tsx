@@ -38,7 +38,7 @@ export default function GamePlayPage({ params }: { params: { id: string } }) {
   const [showGameSummary, setShowGameSummary] = useState(false)
   const [gameCompleted, setGameCompleted] = useState(false)
 
-  const [apiBaseUrl, setApiBaseUrl] = useState("http://localhost:8000")
+  const [apiBaseUrl, setApiBaseUrl] = useState("https://kinefast.onrender.com")
   const [connectionStatus, setConnectionStatus] = useState<"connected" | "disconnected" | "connecting">("connecting")
   const [retryCount, setRetryCount] = useState(0)
   const maxRetries = 3
