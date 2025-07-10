@@ -1,57 +1,47 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, BookOpen, Trophy, ArrowRight, Bug, TestTube, Database } from "lucide-react"
-import Link from "next/link"
-import { ChartContainerExample } from "@/components/chart-container-example"
-import { Badge } from "@/components/ui/badge"
-import GameUsageChart from "@/components/game-usage-chart"
-import PerformanceChart from "@/components/performance-chart"
-import { SkillProgressChart } from "@/components/skill-progress-chart"
-import { SubjectPerformanceChart } from "@/components/subject-performance-chart"
-import { ChartArea } from "@/components/charts/chart-area"
-import { ChartBar } from "@/components/charts/chart-bar"
-import { ChartLine } from "@/components/charts/chart-line"
-import { ChartPie } from "@/components/charts/chart-pie"
-import { ChartContainer } from "@/components/ui/chart/chart-container"
-import MDBox from "@/components/MDBox"
-import DefaultProjectCard from "@/components/default-project-card"
-import { getStudents, getClasses, getGames } from "@/lib/api"
-import { Skeleton } from "@/components/ui/skeleton"
+import dynamic from "next/dynamic" // Dinamik import için eklendi
 
+// UI Bileşenleri
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Button } from "@/components/ui/button"
+import MDBox from "@/components/MDBox"
+
+// Ikonlar
+import { Users, BookOpen, Trophy, Bug, Database, Gamepad2, TrendingUp, School, Settings, BarChart3, Wrench, FolderSyncIcon as Sync, Crown, Loader2 } from "lucide-react"
+
+// Diğer
+import Link from "next/link"
+import { motion } from "framer-motion"
 import { useAuth } from "@/contexts/auth-context"
 import { useLanguage } from "@/contexts/language-context"
-import { toast } from "@/components/ui/use-toast"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import {
+import { getStudents, getClasses, getGames } from "@/lib/api"
 
-  Gamepad2,
-  TrendingUp,
-  School,
-  Settings,
-  BarChart3,
 
-  Wrench,
+// --- DİNAMİK BİLEŞEN YÜKLEYİCİLERİ ---
 
-  FolderSyncIcon as Sync,
-  Crown,
-} from "lucide-react"
+// Grafiklerin yüklenmesi sırasında gösterilecek ortak bir yükleyici bileşeni
+const ChartLoader = () => (
+    <div className="flex items-center justify-center h-[300px]">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+    </div>
+)
 
+// Özel grafik bileşenlerini dinamik olarak yükle
+const DynamicGameUsageChart = dynamic(() => import("@/components/game-usage-chart"), { loading: () => <ChartLoader />, ssr: false })
+const DynamicPerformanceChart = dynamic(() => import("@/components/performance-chart"), { loading: () => <ChartLoader />, ssr: false })
+const DynamicSkillProgressChart = dynamic(() => import("@/components/skill-progress-chart"), { loading: () => <ChartLoader />, ssr: false })
+const DynamicSubjectPerformanceChart = dynamic(() => import("@/components/subject-performance-chart"), { loading: () => <ChartLoader />, ssr: false })
+
+
+// --- ANA DASHBOARD SAYFA BİLEŞENİ ---
 
 export default function DashboardPage() {
-  // Başlangıç değerlerini 0 olarak ayarladım
-  const { user, isAuthenticated, isInitialized } = useAuth()
-
+  const { user } = useAuth()
   const { translate: t } = useLanguage()
-  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null)
-  //const [gameUsageData, setGameUsageData] = useState<any[]>([])
-  //const [performanceData, setPerformanceData] = useState<any[]>([])
-  const [skillData, setSkillData] = useState<any[]>([])
-  const [subjectData, setSubjectData] = useState<any[]>([])
-
-
 
   const [totalStudents, setTotalStudents] = useState<number>(0)
   const [totalClasses, setTotalClasses] = useState<number>(0)
@@ -61,100 +51,43 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setLoading(true)
-        const schoolId = 1 // Placeholder school_id. Gerçek uygulamada kullanıcı bağlamından gelmeli.
+      // Veri çekme işlemi başlamadan önce yükleme durumunu true yap
+      setLoading(true)
+      setError(null)
 
-        const studentsResponse = await getStudents(schoolId)
-        const classesResponse = await getClasses(schoolId)
-        const gamesResponse = await getGames()
+      try {
+        const schoolId = user?.school_id || 1 // Kullanıcıdan school_id al, yoksa varsayılan kullan
+
+        const [studentsResponse, classesResponse, gamesResponse] = await Promise.all([
+            getStudents(schoolId),
+            getClasses(schoolId),
+            getGames()
+        ]);
 
         setTotalStudents(studentsResponse.length)
         setTotalClasses(classesResponse.length)
         setTotalGames(gamesResponse.length)
-        setError(null) // Başarılı olursa hatayı temizle
       } catch (err: any) {
         console.error("Failed to fetch dashboard data:", err)
-        // Hata mesajını daha açıklayıcı hale getirdim
         setError(
-          `Veriler yüklenemedi: ${err.message || "API'ye bağlanılamadı. Backend'inizin çalıştığından ve NEXT_PUBLIC_API_URL'nin doğru ayarlandığından emin olun."}`,
+          `Veriler yüklenemedi: ${err.message || "API'ye bağlanılamadı. Lütfen ağ bağlantınızı kontrol edin."}`,
         )
-        // Hata durumunda da yüklemeyi bitir
-        setTotalStudents(0) // Hata durumunda varsayılan değerler
+        // Hata durumunda değerleri sıfırla
+        setTotalStudents(0)
         setTotalClasses(0)
         setTotalGames(0)
       } finally {
+        // İşlem bittiğinde yükleme durumunu false yap
         setLoading(false)
       }
     }
 
-    fetchData()
-  }, [])
+    if (user) {
+        fetchData()
+    }
+  }, [user])
 
-  // Yeni grafik bileşenleri için veri
-  const studentEngagementData = [
-    { month: "Ocak", desktop: 186, mobile: 80 },
-    { month: "Şubat", desktop: 305, mobile: 200 },
-    { month: "Mart", desktop: 237, mobile: 120 },
-    { month: "Nisan", desktop: 173, mobile: 190 },
-    { month: "Mayıs", desktop: 209, mobile: 130 },
-    { month: "Haziran", desktop: 214, mobile: 140 },
-  ]
-
-  const gameCompletionData = [
-    { month: "Ocak", desktop: 120, mobile: 60 },
-    { month: "Şubat", desktop: 180, mobile: 95 },
-    { month: "Mart", desktop: 150, mobile: 85 },
-    { month: "Nisan", desktop: 200, mobile: 110 },
-    { month: "Mayıs", desktop: 165, mobile: 90 },
-    { month: "Haziran", desktop: 190, mobile: 105 },
-  ]
-
-  const subjectDistributionData = [
-    { browser: "matematik", visitors: 275, fill: "var(--color-chrome)" },
-    { browser: "fen", visitors: 200, fill: "var(--color-safari)" },
-    { browser: "türkçe", visitors: 287, fill: "var(--color-firefox)" },
-    { browser: "sosyal", visitors: 173, fill: "var(--color-edge)" },
-    { browser: "diğer", visitors: 190, fill: "var(--color-other)" },
-  ]
-
-  const chartConfig = {
-    desktop: {
-      label: "Masaüstü",
-      color: "hsl(var(--chart-1))",
-    },
-    mobile: {
-      label: "Mobil",
-      color: "hsl(var(--chart-2))",
-    },
-  }
-
-  const pieChartConfig = {
-    visitors: {
-      label: "Öğrenci",
-    },
-    chrome: {
-      label: "Matematik",
-      color: "hsl(var(--chart-1))",
-    },
-    safari: {
-      label: "Fen",
-      color: "hsl(var(--chart-2))",
-    },
-    firefox: {
-      label: "Türkçe",
-      color: "hsl(var(--chart-3))",
-    },
-    edge: {
-      label: "Sosyal",
-      color: "hsl(var(--chart-4))",
-    },
-    other: {
-      label: "Diğer",
-      color: "hsl(var(--chart-5))",
-    },
-  }
-
+  // Grafik verileri (statik veya ileride API'den gelebilir)
   const performanceData = [
     { month: "Jan", score: 65 },
     { month: "Feb", score: 72 },
@@ -185,6 +118,7 @@ export default function DashboardPage() {
     { subject: "English", correct: 88, incorrect: 12 },
   ]
 
+  // Framer Motion için animasyon varyantları
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -209,23 +143,38 @@ export default function DashboardPage() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+        <h2 className="text-3xl font-bold tracking-tight">{t("Dashboard")}</h2>
         <div className="flex items-center space-x-2">
           <Badge variant="outline">{user?.role || "User"}</Badge>
         </div>
       </div>
+
+      {error && (
+         <Card className="bg-destructive text-destructive-foreground">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><AlertCircle/> Hata</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p>{error}</p>
+            </CardContent>
+         </Card>
+      )}
 
       {/* Statistics Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <MDBox bgColor="info" variant="gradient" borderRadius="lg" coloredShadow="info" pt={2} pb={2} px={2}>
           <Card className="border-0 bg-transparent text-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/90">Toplam Öğrenci</CardTitle>
+              <CardTitle className="text-sm font-medium text-white/90">{t("Total Students")}</CardTitle>
               <Users className="h-4 w-4 text-white/90" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-white">{dashboardData?.totalStudents || 0}</div>
-              <p className="text-xs text-white/80">Sistemdeki aktif öğrenciler</p>
+              {loading ? (
+                <Skeleton className="h-8 w-20 bg-white/30" />
+              ) : (
+                <div className="text-2xl font-bold text-white">{totalStudents}</div>
+              )}
+              <p className="text-xs text-white/80">{t("Active students in the system")}</p>
             </CardContent>
           </Card>
         </MDBox>
@@ -233,12 +182,16 @@ export default function DashboardPage() {
         <MDBox bgColor="success" variant="gradient" borderRadius="lg" coloredShadow="success" pt={2} pb={2} px={2}>
           <Card className="border-0 bg-transparent text-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/90">Toplam Sınıf</CardTitle>
+              <CardTitle className="text-sm font-medium text-white/90">{t("Total Classes")}</CardTitle>
               <BookOpen className="h-4 w-4 text-white/90" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-white">{dashboardData?.totalClasses || 0}</div>
-              <p className="text-xs text-white/80">Aktif sınıflar</p>
+              {loading ? (
+                 <Skeleton className="h-8 w-20 bg-white/30" />
+              ) : (
+                <div className="text-2xl font-bold text-white">{totalClasses}</div>
+              )}
+              <p className="text-xs text-white/80">{t("Active classes")}</p>
             </CardContent>
           </Card>
         </MDBox>
@@ -246,289 +199,122 @@ export default function DashboardPage() {
         <MDBox bgColor="warning" variant="gradient" borderRadius="lg" coloredShadow="warning" pt={2} pb={2} px={2}>
           <Card className="border-0 bg-transparent text-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/90">Toplam Oyun</CardTitle>
+              <CardTitle className="text-sm font-medium text-white/90">{t("Total Games")}</CardTitle>
               <Gamepad2 className="h-4 w-4 text-white/90" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-white">{dashboardData?.totalGames || 0}</div>
-              <p className="text-xs text-white/80">Mevcut oyunlar</p>
+              {loading ? (
+                <Skeleton className="h-8 w-20 bg-white/30" />
+              ) : (
+                <div className="text-2xl font-bold text-white">{totalGames}</div>
+              )}
+              <p className="text-xs text-white/80">{t("Available games")}</p>
             </CardContent>
           </Card>
         </MDBox>
       </div>
 
       {/* Project Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.1s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <School className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Okul Bilgileri</CardTitle>
-                  <CardDescription className="text-sm">Okul ayarları ve bilgileri</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/schools">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Görüntüle
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+      <motion.div
+        className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-blue-100 rounded-lg"><School className="h-6 w-6 text-blue-600" /></div><div><CardTitle className="text-lg">{t("School Information")}</CardTitle><CardDescription className="text-sm">{t("School settings and information")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/schools"><Button variant="outline" className="w-full bg-transparent">{t("View")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.2s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <Settings className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Hızlı İşlemler</CardTitle>
-                  <CardDescription className="text-sm">Sık kullanılan işlemler</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="space-y-2">
-                <Link href="/students/create">
-                  <Button variant="outline" size="sm" className="w-full bg-transparent">
-                    Öğrenci Ekle
-                  </Button>
-                </Link>
-                <Link href="/classes/create">
-                  <Button variant="outline" size="sm" className="w-full bg-transparent">
-                    Sınıf Oluştur
-                  </Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+             <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-green-100 rounded-lg"><Settings className="h-6 w-6 text-green-600" /></div><div><CardTitle className="text-lg">{t("Quick Actions")}</CardTitle><CardDescription className="text-sm">{t("Frequently used actions")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                        <div className="space-y-2">
+                            <Link href="/students/create"><Button variant="outline" size="sm" className="w-full bg-transparent">{t("Add Student")}</Button></Link>
+                            <Link href="/classes/create"><Button variant="outline" size="sm" className="w-full bg-transparent">{t("Create Class")}</Button></Link>
+                        </div>
+                    </CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.3s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-purple-100 rounded-lg">
-                  <TrendingUp className="h-6 w-6 text-purple-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Öğrenci İlerlemesi</CardTitle>
-                  <CardDescription className="text-sm">Detaylı analiz ve raporlar</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/analytics">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Analitik
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-purple-100 rounded-lg"><TrendingUp className="h-6 w-6 text-purple-600" /></div><div><CardTitle className="text-lg">{t("Student Progress")}</CardTitle><CardDescription className="text-sm">{t("Detailed analysis and reports")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/analytics"><Button variant="outline" className="w-full bg-transparent">{t("Analytics")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.4s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-amber-100 rounded-lg">
-                  <Crown className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Elçi Paneli</CardTitle>
-                  <CardDescription className="text-sm">Elçi programı yönetimi</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/elci-panel">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Paneli Aç
-                </Button>
-              </Link>
-            </CardContent>
-            <CardContent className="pt-0">
-              <Link href="/ambassador-applications">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Ambassador Panel
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-amber-100 rounded-lg"><Crown className="h-6 w-6 text-amber-600" /></div><div><CardTitle className="text-lg">{t("Ambassador Panel")}</CardTitle><CardDescription className="text-sm">{t("Ambassador program management")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/elci-panel"><Button variant="outline" className="w-full bg-transparent">{t("Open Panel")}</Button></Link></CardContent>
+                    <CardContent className="pt-0"><Link href="/ambassador-applications"><Button variant="outline" className="w-full bg-transparent">{t("Ambassador Applications")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.5s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-red-100 rounded-lg">
-                  <Bug className="h-6 w-6 text-red-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Hata Ayıklama</CardTitle>
-                  <CardDescription className="text-sm">Sistem durumu ve loglar</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/debug/local-storage">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Debug Panel
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-red-100 rounded-lg"><Bug className="h-6 w-6 text-red-600" /></div><div><CardTitle className="text-lg">{t("Debugging")}</CardTitle><CardDescription className="text-sm">{t("System status and logs")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/debug/local-storage"><Button variant="outline" className="w-full bg-transparent">{t("Debug Panel")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.6s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-orange-100 rounded-lg">
-                  <Wrench className="h-6 w-6 text-orange-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">İlk Kurulum</CardTitle>
-                  <CardDescription className="text-sm">Sistem kurulum sihirbazı</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/initial-setup">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Kurulum
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-orange-100 rounded-lg"><Wrench className="h-6 w-6 text-orange-600" /></div><div><CardTitle className="text-lg">{t("Initial Setup")}</CardTitle><CardDescription className="text-sm">{t("System setup wizard")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/initial-setup"><Button variant="outline" className="w-full bg-transparent">{t("Setup")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.7s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <Database className="h-6 w-6 text-cyan-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Test Verisi Oluşturma</CardTitle>
-                  <CardDescription className="text-sm">Geliştirme için örnek veri</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/test-sync">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Test Verisi
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-cyan-100 rounded-lg"><Database className="h-6 w-6 text-cyan-600" /></div><div><CardTitle className="text-lg">{t("Test Data Generation")}</CardTitle><CardDescription className="text-sm">{t("Sample data for development")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/test-sync"><Button variant="outline" className="w-full bg-transparent">{t("Test Data")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
 
-        <MDBox
-          bgColor="white"
-          borderRadius="lg"
-          shadow="md"
-          pt={3}
-          pb={3}
-          px={3}
-          style={{ animationDelay: "0.8s" }}
-          className="animate-fade-in-up"
-        >
-          <Card className="border-0 shadow-none">
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-indigo-100 rounded-lg">
-                  <Sync className="h-6 w-6 text-indigo-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">Senkronizasyon Testi</CardTitle>
-                  <CardDescription className="text-sm">Veri senkronizasyon araçları</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Link href="/test-sync">
-                <Button variant="outline" className="w-full bg-transparent">
-                  Sync Test
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </MDBox>
-      </div>
+        <motion.div variants={itemVariants}>
+            <MDBox bgColor="white" borderRadius="lg" shadow="md" pt={3} pb={3} px={3} className="h-full">
+                <Card className="border-0 shadow-none">
+                    <CardHeader className="pb-3">
+                        <div className="flex items-center space-x-3"><div className="p-2 bg-indigo-100 rounded-lg"><Sync className="h-6 w-6 text-indigo-600" /></div><div><CardTitle className="text-lg">{t("Synchronization Test")}</CardTitle><CardDescription className="text-sm">{t("Data synchronization tools")}</CardDescription></div></div>
+                    </CardHeader>
+                    <CardContent className="pt-0"><Link href="/test-sync"><Button variant="outline" className="w-full bg-transparent">{t("Sync Test")}</Button></Link></CardContent>
+                </Card>
+            </MDBox>
+        </motion.div>
+      </motion.div>
 
       {/* Charts */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
@@ -536,11 +322,11 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BarChart3 className="h-5 w-5" />
-              Oyun Kullanımı
+              {t("Game Usage")}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <GameUsageChart data={gameUsageData} />
+            <DynamicGameUsageChart data={gameUsageData} />
           </CardContent>
         </Card>
 
@@ -548,11 +334,11 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
-              Performans
+              {t("Performance")}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <PerformanceChart data={performanceData} />
+            <DynamicPerformanceChart data={performanceData} />
           </CardContent>
         </Card>
 
@@ -560,11 +346,11 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Users className="h-5 w-5" />
-              Beceri İlerlemesi
+              {t("Skill Progress")}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <SkillProgressChart data={skillData} />
+            <DynamicSkillProgressChart data={skillProgressData} />
           </CardContent>
         </Card>
 
@@ -572,41 +358,14 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BookOpen className="h-5 w-5" />
-              Ders Performansı
+              {t("Subject Performance")}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <SubjectPerformanceChart data={subjectData} />
+            <DynamicSubjectPerformanceChart data={subjectPerformanceData} />
           </CardContent>
         </Card>
       </div>
-
-      {/* Chart Container Example */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Grafik Konteyner Örneği</CardTitle>
-          <CardDescription>Grafik konteyner bileşeninin kullanım örneği</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ChartContainer
-            config={{
-              desktop: {
-                label: "Desktop",
-                color: "hsl(var(--chart-1))",
-              },
-              mobile: {
-                label: "Mobile",
-                color: "hsl(var(--chart-2))",
-              },
-            }}
-            className="min-h-[200px]"
-          >
-            <div className="flex items-center justify-center h-[200px] text-muted-foreground">
-              Grafik verileri burada görüntülenecek
-            </div>
-          </ChartContainer>
-        </CardContent>
-      </Card>
     </div>
   )
 }
