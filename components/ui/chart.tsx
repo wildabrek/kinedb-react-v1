@@ -1,6 +1,16 @@
 "use client"
 import * as React from "react"
-import { Legend, Tooltip as RechartsTooltip, type TooltipProps } from "recharts"
+import {
+  Legend,
+  Tooltip as RechartsTooltip,
+  type TooltipProps,
+  LineChart as RechartsLineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts"
 import { type VariantProps, cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -192,6 +202,31 @@ const ChartLegendContent = React.forwardRef<
 })
 ChartLegendContent.displayName = "ChartLegendContent"
 
+// LineChart Component
+const LineChart = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    data: any[]
+    config: ChartConfig
+    className?: string
+  }
+>(({ data, config, className, ...props }, ref) => {
+  return (
+    <ChartContainer config={config} className={className} ref={ref} {...props}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RechartsLineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <Line type="monotone" dataKey="value" stroke="hsl(var(--chart-1))" strokeWidth={2} />
+        </RechartsLineChart>
+      </ResponsiveContainer>
+    </ChartContainer>
+  )
+})
+LineChart.displayName = "LineChart"
+
 // Config
 type ChartConfig = {
   [k in string]: {
@@ -206,6 +241,7 @@ export {
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
+  LineChart,
   useChart,
   type ChartConfig,
 }
