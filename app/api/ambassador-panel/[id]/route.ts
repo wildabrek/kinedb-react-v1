@@ -15,7 +15,6 @@ async function ensureDirectoryExists() {
     await fs.mkdir(dataDir, { recursive: true });
   } catch (error) {
     console.error("Error ensuring data directory exists:", error);
-    // Bu kritik bir hata olduğu için yukarıya fırlatılabilir veya özel olarak ele alınabilir.
     throw new Error("Could not create or access the data directory.");
   }
 }
@@ -23,16 +22,16 @@ async function ensureDirectoryExists() {
 // GET: Elçi panel verisini getir
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası standart formata getirildi.
+  context: { params: { id: string } }
 ) {
   try {
-    const { id } = params; // Artık doğrudan 'params' üzerinden erişiyoruz.
+    const { id } = context.params;
 
     if (!id) {
       return NextResponse.json({ error: 'Ambassador ID is required' }, { status: 400 });
     }
 
-    await ensureDirectoryExists(); // Dizinin varlığını kontrol et
+    await ensureDirectoryExists();
     const filePath = path.join(dataDir, `${id}.json`);
 
     const fileContent = await fs.readFile(filePath, 'utf-8');
@@ -41,9 +40,8 @@ export async function GET(
     return NextResponse.json(data);
   } catch (error: any) {
     if (error.code === 'ENOENT') {
-      // Hata mesajı daha anlaşılır hale getirildi.
       return NextResponse.json(
-        { error: `Ambassador panel not found for ID: ${params.id}` },
+        { error: `Ambassador panel not found for ID: ${context.params.id}` },
         { status: 404 }
       );
     }
@@ -56,30 +54,32 @@ export async function GET(
 // PUT: Elçi panel verisini güncelle
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası standart formata getirildi.
+  context: { params: { id: string } }
 ) {
   try {
-    const { id } = params; // Artık doğrudan 'params' üzerinden erişiyoruz.
+    const { id } = context.params;
     const body = await request.json();
 
     if (!id) {
-        return NextResponse.json({ error: 'Ambassador ID is required' }, { status: 400 });
+      return NextResponse.json({ error: 'Ambassador ID is required' }, { status: 400 });
     }
 
-    await ensureDirectoryExists(); // Dizinin varlığını kontrol et
+    await ensureDirectoryExists();
     const filePath = path.join(dataDir, `${id}.json`);
 
     let panelData;
     try {
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        panelData = JSON.parse(fileContent);
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      panelData = JSON.parse(fileContent);
     } catch (readError: any) {
-        // Eğer dosya bulunamazsa, yeni bir dosya oluşturmak için boş bir obje ile başla
-        if (readError.code === 'ENOENT') {
-            panelData = { performance: { pendingEarnings: 0 }, payment: { paymentRequests: [] } };
-        } else {
-            throw readError; // Diğer okuma hatalarını fırlat
-        }
+      if (readError.code === 'ENOENT') {
+        panelData = {
+          performance: { pendingEarnings: 0 },
+          payment: { paymentRequests: [] }
+        };
+      } else {
+        throw readError;
+      }
     }
 
     // Ödeme bilgileri güncellemesi
