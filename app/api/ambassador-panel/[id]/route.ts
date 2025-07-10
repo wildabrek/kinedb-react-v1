@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -21,11 +22,11 @@ async function ensureDirectoryExists() {
 
 // GET: Elçi panel verisini getir
 export async function GET(
-  request: Request,
-  context: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası güncellendi.
+  request: NextRequest,
+  { params }: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası standart formata getirildi.
 ) {
   try {
-    const { id } = context.params; // HATA DÜZELTİLDİ: Parametre 'context' üzerinden alınıyor.
+    const { id } = params; // Artık doğrudan 'params' üzerinden erişiyoruz.
 
     if (!id) {
       return NextResponse.json({ error: 'Ambassador ID is required' }, { status: 400 });
@@ -42,7 +43,7 @@ export async function GET(
     if (error.code === 'ENOENT') {
       // Hata mesajı daha anlaşılır hale getirildi.
       return NextResponse.json(
-        { error: `Ambassador panel not found for ID: ${context.params.id}` },
+        { error: `Ambassador panel not found for ID: ${params.id}` },
         { status: 404 }
       );
     }
@@ -54,11 +55,11 @@ export async function GET(
 
 // PUT: Elçi panel verisini güncelle
 export async function PUT(
-  request: Request,
-  context: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası güncellendi.
+  request: NextRequest,
+  { params }: { params: { id: string } } // HATA DÜZELTİLDİ: Fonksiyon imzası standart formata getirildi.
 ) {
   try {
-    const { id } = context.params; // HATA DÜZELTİLDİ: Parametre 'context' üzerinden alınıyor.
+    const { id } = params; // Artık doğrudan 'params' üzerinden erişiyoruz.
     const body = await request.json();
 
     if (!id) {
@@ -80,7 +81,6 @@ export async function PUT(
             throw readError; // Diğer okuma hatalarını fırlat
         }
     }
-
 
     // Ödeme bilgileri güncellemesi
     if (body.paymentInfo) {

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button"
 import MDBox from "@/components/MDBox"
 
 // Ikonlar
-import { Users, BookOpen, Trophy, Bug, Database, Gamepad2, TrendingUp, School, Settings, BarChart3, Wrench, FolderSyncIcon as Sync, Crown, Loader2 } from "lucide-react"
+import { Users, BookOpen, Bug, Database, Gamepad2, TrendingUp, School, Settings, BarChart3, Wrench, FolderSyncIcon as Sync, Crown, Loader2, AlertCircle } from "lucide-react"
 
 // Diğer
 import Link from "next/link"
@@ -31,10 +31,11 @@ const ChartLoader = () => (
 )
 
 // Özel grafik bileşenlerini dinamik olarak yükle
-const DynamicGameUsageChart = dynamic(() => import("@/components/game-usage-chart"), { loading: () => <ChartLoader />, ssr: false })
-const DynamicPerformanceChart = dynamic(() => import("@/components/performance-chart"), { loading: () => <ChartLoader />, ssr: false })
-const DynamicSkillProgressChart = dynamic(() => import("@/components/skill-progress-chart"), { loading: () => <ChartLoader />, ssr: false })
-const DynamicSubjectPerformanceChart = dynamic(() => import("@/components/subject-performance-chart"), { loading: () => <ChartLoader />, ssr: false })
+// HATA DÜZELTİLDİ: Named export olan bileşenler için .then() eklendi.
+const DynamicGameUsageChart = dynamic(() => import("@/components/game-usage-chart"), { loading: () => <ChartLoader />, ssr: false });
+const DynamicPerformanceChart = dynamic(() => import("@/components/performance-chart"), { loading: () => <ChartLoader />, ssr: false });
+const DynamicSkillProgressChart = dynamic(() => import("@/components/skill-progress-chart").then(mod => mod.SkillProgressChart), { loading: () => <ChartLoader />, ssr: false });
+const DynamicSubjectPerformanceChart = dynamic(() => import("@/components/subject-performance-chart").then(mod => mod.SubjectPerformanceChart), { loading: () => <ChartLoader />, ssr: false });
 
 
 // --- ANA DASHBOARD SAYFA BİLEŞENİ ---
