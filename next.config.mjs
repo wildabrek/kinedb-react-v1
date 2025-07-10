@@ -27,8 +27,19 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-    serverComponentsExternalPackages: ['iyzipay'],
   },
+
+  // 🔥 Burası önemli: Büyük paketleri server dışına al
+  serverExternalPackages: [
+    '@google/genai',
+    '@google/generative-ai',
+    'generative-ai',
+    'jspdf',
+    'html2canvas',
+    'fs',
+    'fs-promise',
+    'path',
+  ],
 }
 
 if (userConfig) {
