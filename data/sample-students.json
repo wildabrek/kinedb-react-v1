@@ -1,0 +1,1902 @@
+[
+  {
+    "id": "1",
+    "name": "Emma Thompson",
+    "grade": "3rd Grade",
+    "class": "3A",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Ms. Johnson",
+    "email": "emma.t@school.edu",
+    "gamesPlayed": 45,
+    "avgScore": 92,
+    "lastActive": "Today, 10:24 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 94,
+      "English": 88,
+      "Science": 91,
+      "History": 82
+    },
+    "skills": {
+      "Critical Thinking": 90,
+      "Problem Solving": 95,
+      "Reading Comprehension": 88,
+      "Mathematical Reasoning": 92,
+      "Scientific Inquiry": 85,
+      "Historical Analysis": 78
+    },
+    "strengths": [
+      "Frequently helps peers understand difficult concepts",
+      "Creative problem solver with unique approaches",
+      "Demonstrates strong leadership in team-based tasks",
+      "Excels in time-bound assessments"
+    ],
+    "areasToImprove": [
+      "Encourage more active participation in discussions",
+      "Needs support in staying focused during independent work",
+      "Needs reminders for homework deadlines"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 94,
+        "plays": 12,
+        "completion": 100,
+        "avgTime": "12 min",
+        "achievements": 8
+      },
+      {
+        "name": "Word Explorer",
+        "score": 88,
+        "plays": 10,
+        "completion": 95,
+        "avgTime": "14 min",
+        "achievements": 7
+      },
+      {
+        "name": "Science Quest",
+        "score": 91,
+        "plays": 8,
+        "completion": 90,
+        "avgTime": "16 min",
+        "achievements": 6
+      },
+      {
+        "name": "History Heroes",
+        "score": 82,
+        "plays": 6,
+        "completion": 85,
+        "avgTime": "18 min",
+        "achievements": 5
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 85,
+        "English": 80,
+        "Science": 82,
+        "History": 75
+      },
+      {
+        "month": "Oct",
+        "Math": 87,
+        "English": 82,
+        "Science": 84,
+        "History": 77
+      },
+      {
+        "month": "Nov",
+        "Math": 90,
+        "English": 84,
+        "Science": 86,
+        "History": 78
+      },
+      {
+        "month": "Dec",
+        "Math": 92,
+        "English": 86,
+        "Science": 88,
+        "History": 80
+      },
+      {
+        "month": "Jan",
+        "Math": 93,
+        "English": 87,
+        "Science": 90,
+        "History": 81
+      },
+      {
+        "month": "Feb",
+        "Math": 94,
+        "English": 88,
+        "Science": 91,
+        "History": 82
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 80,
+        "Problem Solving": 85,
+        "Reading Comprehension": 78
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 82,
+        "Problem Solving": 87,
+        "Reading Comprehension": 80
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 85,
+        "Problem Solving": 89,
+        "Reading Comprehension": 82
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 87,
+        "Problem Solving": 91,
+        "Reading Comprehension": 84
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 88,
+        "Problem Solving": 93,
+        "Reading Comprehension": 86
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 90,
+        "Problem Solving": 95,
+        "Reading Comprehension": 88
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 15
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 18
+      },
+      {
+        "game": "Science Quest",
+        "gain": 12
+      },
+      {
+        "game": "History Heroes",
+        "gain": 14
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Eco Explorer",
+        "level": "Intermediate",
+        "description": "Learn about ecosystems, recycling, and biodiversity"
+      },
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      }
+    ],
+    "personalizedPlan": "Encourage journaling and reflection to improve articulation of ideas."
+  },
+  {
+    "id": "2",
+    "name": "Liam Walker",
+    "grade": "3rd Grade",
+    "class": "3B",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mr. Smith",
+    "email": "liam.w@school.edu",
+    "gamesPlayed": 36,
+    "avgScore": 98,
+    "lastActive": "Today, 10:54 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 97,
+      "English": 92,
+      "Science": 78,
+      "History": 98
+    },
+    "skills": {
+      "Critical Thinking": 77,
+      "Problem Solving": 84,
+      "Reading Comprehension": 97,
+      "Mathematical Reasoning": 86,
+      "Scientific Inquiry": 97,
+      "Historical Analysis": 81
+    },
+    "strengths": [
+      "Frequently helps peers understand difficult concepts",
+      "Demonstrates strong leadership in team-based tasks",
+      "Consistently completes assignments on time",
+      "Creative problem solver with unique approaches"
+    ],
+    "areasToImprove": [
+      "Provide scaffolding for writing assignments",
+      "Needs support in staying focused during independent work",
+      "Introduce additional practice in data interpretation"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 92,
+        "plays": 12,
+        "completion": 86,
+        "avgTime": "11 min",
+        "achievements": 9
+      },
+      {
+        "name": "Word Explorer",
+        "score": 90,
+        "plays": 6,
+        "completion": 98,
+        "avgTime": "18 min",
+        "achievements": 6
+      },
+      {
+        "name": "Science Quest",
+        "score": 86,
+        "plays": 9,
+        "completion": 81,
+        "avgTime": "16 min",
+        "achievements": 4
+      },
+      {
+        "name": "History Heroes",
+        "score": 75,
+        "plays": 15,
+        "completion": 88,
+        "avgTime": "10 min",
+        "achievements": 9
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 84,
+        "English": 79,
+        "Science": 75,
+        "History": 93
+      },
+      {
+        "month": "Oct",
+        "Math": 80,
+        "English": 96,
+        "Science": 75,
+        "History": 82
+      },
+      {
+        "month": "Nov",
+        "Math": 92,
+        "English": 75,
+        "Science": 85,
+        "History": 78
+      },
+      {
+        "month": "Dec",
+        "Math": 97,
+        "English": 93,
+        "Science": 91,
+        "History": 96
+      },
+      {
+        "month": "Jan",
+        "Math": 92,
+        "English": 88,
+        "Science": 82,
+        "History": 98
+      },
+      {
+        "month": "Feb",
+        "Math": 97,
+        "English": 97,
+        "Science": 96,
+        "History": 88
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 80,
+        "Problem Solving": 89,
+        "Reading Comprehension": 80
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 97,
+        "Problem Solving": 89,
+        "Reading Comprehension": 83
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 76,
+        "Problem Solving": 90,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 89,
+        "Problem Solving": 83,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 94,
+        "Problem Solving": 91,
+        "Reading Comprehension": 84
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 84,
+        "Problem Solving": 76,
+        "Reading Comprehension": 79
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 19
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 12
+      },
+      {
+        "game": "Science Quest",
+        "gain": 15
+      },
+      {
+        "game": "History Heroes",
+        "gain": 19
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      },
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      }
+    ],
+    "personalizedPlan": "Recommend participation in science fairs and math clubs."
+  },
+  {
+    "id": "3",
+    "name": "Olivia Davis",
+    "grade": "3rd Grade",
+    "class": "3C",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mrs. Clark",
+    "email": "olivia.d@school.edu",
+    "gamesPlayed": 32,
+    "avgScore": 94,
+    "lastActive": "Today, 9:15 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 82,
+      "English": 85,
+      "Science": 94,
+      "History": 89
+    },
+    "skills": {
+      "Critical Thinking": 84,
+      "Problem Solving": 98,
+      "Reading Comprehension": 83,
+      "Mathematical Reasoning": 98,
+      "Scientific Inquiry": 75,
+      "Historical Analysis": 90
+    },
+    "strengths": [
+      "Consistently completes assignments on time",
+      "Frequently helps peers understand difficult concepts",
+      "Creative problem solver with unique approaches",
+      "Excels in time-bound assessments"
+    ],
+    "areasToImprove": [
+      "Provide scaffolding for writing assignments",
+      "Introduce additional practice in data interpretation",
+      "Needs reminders for homework deadlines"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 91,
+        "plays": 12,
+        "completion": 96,
+        "avgTime": "16 min",
+        "achievements": 7
+      },
+      {
+        "name": "Word Explorer",
+        "score": 90,
+        "plays": 5,
+        "completion": 100,
+        "avgTime": "12 min",
+        "achievements": 9
+      },
+      {
+        "name": "Science Quest",
+        "score": 94,
+        "plays": 10,
+        "completion": 92,
+        "avgTime": "18 min",
+        "achievements": 9
+      },
+      {
+        "name": "History Heroes",
+        "score": 85,
+        "plays": 13,
+        "completion": 86,
+        "avgTime": "19 min",
+        "achievements": 9
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 82,
+        "English": 75,
+        "Science": 82,
+        "History": 81
+      },
+      {
+        "month": "Oct",
+        "Math": 91,
+        "English": 78,
+        "Science": 97,
+        "History": 75
+      },
+      {
+        "month": "Nov",
+        "Math": 81,
+        "English": 78,
+        "Science": 94,
+        "History": 81
+      },
+      {
+        "month": "Dec",
+        "Math": 85,
+        "English": 92,
+        "Science": 77,
+        "History": 96
+      },
+      {
+        "month": "Jan",
+        "Math": 78,
+        "English": 96,
+        "Science": 90,
+        "History": 84
+      },
+      {
+        "month": "Feb",
+        "Math": 98,
+        "English": 82,
+        "Science": 93,
+        "History": 91
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 91,
+        "Problem Solving": 75,
+        "Reading Comprehension": 81
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 88,
+        "Problem Solving": 75,
+        "Reading Comprehension": 77
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 83,
+        "Problem Solving": 98,
+        "Reading Comprehension": 97
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 82,
+        "Problem Solving": 92,
+        "Reading Comprehension": 82
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 88,
+        "Problem Solving": 80,
+        "Reading Comprehension": 92
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 77,
+        "Problem Solving": 87,
+        "Reading Comprehension": 92
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 12
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 18
+      },
+      {
+        "game": "Science Quest",
+        "gain": 16
+      },
+      {
+        "game": "History Heroes",
+        "gain": 12
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      },
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      }
+    ],
+    "personalizedPlan": "Introduce regular goal-setting to build accountability."
+  },
+  {
+    "id": "4",
+    "name": "Noah Wilson",
+    "grade": "3rd Grade",
+    "class": "3A",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Ms. Evans",
+    "email": "noah.w@school.edu",
+    "gamesPlayed": 40,
+    "avgScore": 85,
+    "lastActive": "Today, 10:27 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 90,
+      "English": 78,
+      "Science": 91,
+      "History": 79
+    },
+    "skills": {
+      "Critical Thinking": 75,
+      "Problem Solving": 85,
+      "Reading Comprehension": 84,
+      "Mathematical Reasoning": 87,
+      "Scientific Inquiry": 78,
+      "Historical Analysis": 95
+    },
+    "strengths": [
+      "Frequently helps peers understand difficult concepts",
+      "Quick to adapt to new learning tools and platforms",
+      "Creative problem solver with unique approaches",
+      "Consistently completes assignments on time"
+    ],
+    "areasToImprove": [
+      "Encourage more active participation in discussions",
+      "Needs support in staying focused during independent work",
+      "Could benefit from structured reading practice"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 96,
+        "plays": 10,
+        "completion": 89,
+        "avgTime": "12 min",
+        "achievements": 9
+      },
+      {
+        "name": "Word Explorer",
+        "score": 87,
+        "plays": 14,
+        "completion": 94,
+        "avgTime": "10 min",
+        "achievements": 7
+      },
+      {
+        "name": "Science Quest",
+        "score": 86,
+        "plays": 8,
+        "completion": 98,
+        "avgTime": "17 min",
+        "achievements": 7
+      },
+      {
+        "name": "History Heroes",
+        "score": 87,
+        "plays": 6,
+        "completion": 95,
+        "avgTime": "17 min",
+        "achievements": 9
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 89,
+        "English": 75,
+        "Science": 75,
+        "History": 98
+      },
+      {
+        "month": "Oct",
+        "Math": 90,
+        "English": 97,
+        "Science": 98,
+        "History": 76
+      },
+      {
+        "month": "Nov",
+        "Math": 78,
+        "English": 75,
+        "Science": 95,
+        "History": 94
+      },
+      {
+        "month": "Dec",
+        "Math": 90,
+        "English": 87,
+        "Science": 93,
+        "History": 89
+      },
+      {
+        "month": "Jan",
+        "Math": 87,
+        "English": 86,
+        "Science": 90,
+        "History": 93
+      },
+      {
+        "month": "Feb",
+        "Math": 90,
+        "English": 78,
+        "Science": 94,
+        "History": 98
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 79,
+        "Problem Solving": 88,
+        "Reading Comprehension": 92
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 98,
+        "Problem Solving": 89,
+        "Reading Comprehension": 95
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 89,
+        "Problem Solving": 94,
+        "Reading Comprehension": 92
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 87,
+        "Problem Solving": 93,
+        "Reading Comprehension": 80
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 75,
+        "Problem Solving": 80,
+        "Reading Comprehension": 93
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 81,
+        "Problem Solving": 77,
+        "Reading Comprehension": 97
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 19
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 15
+      },
+      {
+        "game": "Science Quest",
+        "gain": 16
+      },
+      {
+        "game": "History Heroes",
+        "gain": 11
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Geometry Genius",
+        "level": "3-4",
+        "description": "Master shapes, angles, and spatial reasoning through puzzles"
+      },
+      {
+        "name": "Eco Explorer",
+        "level": "Intermediate",
+        "description": "Learn about ecosystems, recycling, and biodiversity"
+      },
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      }
+    ],
+    "personalizedPlan": "Recommend participation in science fairs and math clubs."
+  },
+  {
+    "id": "5",
+    "name": "Ava Martinez",
+    "grade": "3rd Grade",
+    "class": "3B",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mr. Lee",
+    "email": "ava.m@school.edu",
+    "gamesPlayed": 31,
+    "avgScore": 96,
+    "lastActive": "Today, 8:46 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 78,
+      "English": 92,
+      "Science": 94,
+      "History": 98
+    },
+    "skills": {
+      "Critical Thinking": 77,
+      "Problem Solving": 80,
+      "Reading Comprehension": 80,
+      "Mathematical Reasoning": 90,
+      "Scientific Inquiry": 82,
+      "Historical Analysis": 97
+    },
+    "strengths": [
+      "Quick to adapt to new learning tools and platforms",
+      "Consistently completes assignments on time",
+      "Creative problem solver with unique approaches",
+      "Excels in time-bound assessments"
+    ],
+    "areasToImprove": [
+      "Could benefit from structured reading practice",
+      "Introduce additional practice in data interpretation",
+      "Provide scaffolding for writing assignments"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 97,
+        "plays": 8,
+        "completion": 84,
+        "avgTime": "18 min",
+        "achievements": 9
+      },
+      {
+        "name": "Word Explorer",
+        "score": 90,
+        "plays": 8,
+        "completion": 80,
+        "avgTime": "20 min",
+        "achievements": 5
+      },
+      {
+        "name": "Science Quest",
+        "score": 87,
+        "plays": 9,
+        "completion": 80,
+        "avgTime": "14 min",
+        "achievements": 5
+      },
+      {
+        "name": "History Heroes",
+        "score": 85,
+        "plays": 13,
+        "completion": 100,
+        "avgTime": "14 min",
+        "achievements": 4
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 96,
+        "English": 89,
+        "Science": 82,
+        "History": 81
+      },
+      {
+        "month": "Oct",
+        "Math": 98,
+        "English": 95,
+        "Science": 90,
+        "History": 77
+      },
+      {
+        "month": "Nov",
+        "Math": 77,
+        "English": 97,
+        "Science": 94,
+        "History": 94
+      },
+      {
+        "month": "Dec",
+        "Math": 96,
+        "English": 81,
+        "Science": 85,
+        "History": 95
+      },
+      {
+        "month": "Jan",
+        "Math": 92,
+        "English": 93,
+        "Science": 81,
+        "History": 83
+      },
+      {
+        "month": "Feb",
+        "Math": 80,
+        "English": 90,
+        "Science": 93,
+        "History": 91
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 89,
+        "Problem Solving": 75,
+        "Reading Comprehension": 84
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 93,
+        "Problem Solving": 78,
+        "Reading Comprehension": 89
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 98,
+        "Problem Solving": 97,
+        "Reading Comprehension": 77
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 93,
+        "Problem Solving": 90,
+        "Reading Comprehension": 81
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 76,
+        "Problem Solving": 93,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 90,
+        "Problem Solving": 98,
+        "Reading Comprehension": 84
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 15
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 17
+      },
+      {
+        "game": "Science Quest",
+        "gain": 14
+      },
+      {
+        "game": "History Heroes",
+        "gain": 10
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      },
+      {
+        "name": "Geometry Genius",
+        "level": "3-4",
+        "description": "Master shapes, angles, and spatial reasoning through puzzles"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      }
+    ],
+    "personalizedPlan": "Use game-based assessments to increase engagement in weak areas."
+  },
+  {
+    "id": "6",
+    "name": "Elijah Robinson",
+    "grade": "3rd Grade",
+    "class": "3C",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mrs. Hall",
+    "email": "elijah.r@school.edu",
+    "gamesPlayed": 38,
+    "avgScore": 86,
+    "lastActive": "Today, 9:12 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 92,
+      "English": 93,
+      "Science": 94,
+      "History": 82
+    },
+    "skills": {
+      "Critical Thinking": 87,
+      "Problem Solving": 84,
+      "Reading Comprehension": 82,
+      "Mathematical Reasoning": 98,
+      "Scientific Inquiry": 96,
+      "Historical Analysis": 98
+    },
+    "strengths": [
+      "Creative problem solver with unique approaches",
+      "Excels in time-bound assessments",
+      "Demonstrates strong leadership in team-based tasks",
+      "Frequently helps peers understand difficult concepts"
+    ],
+    "areasToImprove": [
+      "Introduce additional practice in data interpretation",
+      "Encourage more active participation in discussions",
+      "Needs support in staying focused during independent work"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 85,
+        "plays": 12,
+        "completion": 94,
+        "avgTime": "19 min",
+        "achievements": 7
+      },
+      {
+        "name": "Word Explorer",
+        "score": 88,
+        "plays": 15,
+        "completion": 86,
+        "avgTime": "10 min",
+        "achievements": 7
+      },
+      {
+        "name": "Science Quest",
+        "score": 89,
+        "plays": 7,
+        "completion": 100,
+        "avgTime": "10 min",
+        "achievements": 5
+      },
+      {
+        "name": "History Heroes",
+        "score": 88,
+        "plays": 9,
+        "completion": 88,
+        "avgTime": "11 min",
+        "achievements": 5
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 78,
+        "English": 76,
+        "Science": 88,
+        "History": 76
+      },
+      {
+        "month": "Oct",
+        "Math": 98,
+        "English": 98,
+        "Science": 84,
+        "History": 77
+      },
+      {
+        "month": "Nov",
+        "Math": 80,
+        "English": 84,
+        "Science": 86,
+        "History": 78
+      },
+      {
+        "month": "Dec",
+        "Math": 81,
+        "English": 94,
+        "Science": 79,
+        "History": 83
+      },
+      {
+        "month": "Jan",
+        "Math": 84,
+        "English": 76,
+        "Science": 87,
+        "History": 90
+      },
+      {
+        "month": "Feb",
+        "Math": 75,
+        "English": 95,
+        "Science": 81,
+        "History": 98
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 78,
+        "Problem Solving": 85,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 87,
+        "Problem Solving": 78,
+        "Reading Comprehension": 82
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 80,
+        "Problem Solving": 91,
+        "Reading Comprehension": 91
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 78,
+        "Problem Solving": 94,
+        "Reading Comprehension": 96
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 85,
+        "Problem Solving": 98,
+        "Reading Comprehension": 95
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 88,
+        "Problem Solving": 78,
+        "Reading Comprehension": 89
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 17
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 16
+      },
+      {
+        "game": "Science Quest",
+        "gain": 19
+      },
+      {
+        "game": "History Heroes",
+        "gain": 19
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Geometry Genius",
+        "level": "3-4",
+        "description": "Master shapes, angles, and spatial reasoning through puzzles"
+      },
+      {
+        "name": "Eco Explorer",
+        "level": "Intermediate",
+        "description": "Learn about ecosystems, recycling, and biodiversity"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      }
+    ],
+    "personalizedPlan": "Introduce regular goal-setting to build accountability."
+  },
+  {
+    "id": "7",
+    "name": "Sophia Lewis",
+    "grade": "3rd Grade",
+    "class": "3A",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Ms. Young",
+    "email": "sophia.l@school.edu",
+    "gamesPlayed": 50,
+    "avgScore": 97,
+    "lastActive": "Today, 9:11 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 95,
+      "English": 85,
+      "Science": 98,
+      "History": 81
+    },
+    "skills": {
+      "Critical Thinking": 97,
+      "Problem Solving": 85,
+      "Reading Comprehension": 85,
+      "Mathematical Reasoning": 97,
+      "Scientific Inquiry": 89,
+      "Historical Analysis": 77
+    },
+    "strengths": [
+      "Quick to adapt to new learning tools and platforms",
+      "Demonstrates strong leadership in team-based tasks",
+      "Excels in time-bound assessments",
+      "Frequently helps peers understand difficult concepts"
+    ],
+    "areasToImprove": [
+      "Provide scaffolding for writing assignments",
+      "Introduce additional practice in data interpretation",
+      "Encourage more active participation in discussions"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 94,
+        "plays": 8,
+        "completion": 100,
+        "avgTime": "10 min",
+        "achievements": 8
+      },
+      {
+        "name": "Word Explorer",
+        "score": 77,
+        "plays": 13,
+        "completion": 99,
+        "avgTime": "11 min",
+        "achievements": 8
+      },
+      {
+        "name": "Science Quest",
+        "score": 97,
+        "plays": 14,
+        "completion": 88,
+        "avgTime": "11 min",
+        "achievements": 6
+      },
+      {
+        "name": "History Heroes",
+        "score": 85,
+        "plays": 9,
+        "completion": 88,
+        "avgTime": "20 min",
+        "achievements": 7
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 86,
+        "English": 98,
+        "Science": 80,
+        "History": 89
+      },
+      {
+        "month": "Oct",
+        "Math": 84,
+        "English": 94,
+        "Science": 80,
+        "History": 92
+      },
+      {
+        "month": "Nov",
+        "Math": 92,
+        "English": 90,
+        "Science": 77,
+        "History": 91
+      },
+      {
+        "month": "Dec",
+        "Math": 83,
+        "English": 84,
+        "Science": 93,
+        "History": 82
+      },
+      {
+        "month": "Jan",
+        "Math": 79,
+        "English": 96,
+        "Science": 94,
+        "History": 76
+      },
+      {
+        "month": "Feb",
+        "Math": 85,
+        "English": 91,
+        "Science": 77,
+        "History": 75
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 94,
+        "Problem Solving": 75,
+        "Reading Comprehension": 92
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 97,
+        "Problem Solving": 97,
+        "Reading Comprehension": 83
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 77,
+        "Problem Solving": 94,
+        "Reading Comprehension": 89
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 91,
+        "Problem Solving": 82,
+        "Reading Comprehension": 85
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 78,
+        "Problem Solving": 85,
+        "Reading Comprehension": 81
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 82,
+        "Problem Solving": 79,
+        "Reading Comprehension": 86
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 11
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 16
+      },
+      {
+        "game": "Science Quest",
+        "gain": 17
+      },
+      {
+        "game": "History Heroes",
+        "gain": 17
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      },
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      },
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      }
+    ],
+    "personalizedPlan": "Recommend participation in science fairs and math clubs."
+  },
+  {
+    "id": "8",
+    "name": "James Walker",
+    "grade": "3rd Grade",
+    "class": "3B",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mr. Allen",
+    "email": "james.w@school.edu",
+    "gamesPlayed": 41,
+    "avgScore": 95,
+    "lastActive": "Today, 10:48 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 98,
+      "English": 95,
+      "Science": 83,
+      "History": 96
+    },
+    "skills": {
+      "Critical Thinking": 93,
+      "Problem Solving": 83,
+      "Reading Comprehension": 83,
+      "Mathematical Reasoning": 78,
+      "Scientific Inquiry": 96,
+      "Historical Analysis": 85
+    },
+    "strengths": [
+      "Consistently completes assignments on time",
+      "Creative problem solver with unique approaches",
+      "Excels in time-bound assessments",
+      "Demonstrates strong leadership in team-based tasks"
+    ],
+    "areasToImprove": [
+      "Encourage more active participation in discussions",
+      "Provide scaffolding for writing assignments",
+      "Introduce additional practice in data interpretation"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 92,
+        "plays": 6,
+        "completion": 92,
+        "avgTime": "19 min",
+        "achievements": 4
+      },
+      {
+        "name": "Word Explorer",
+        "score": 79,
+        "plays": 12,
+        "completion": 83,
+        "avgTime": "14 min",
+        "achievements": 9
+      },
+      {
+        "name": "Science Quest",
+        "score": 79,
+        "plays": 6,
+        "completion": 92,
+        "avgTime": "13 min",
+        "achievements": 7
+      },
+      {
+        "name": "History Heroes",
+        "score": 96,
+        "plays": 7,
+        "completion": 100,
+        "avgTime": "12 min",
+        "achievements": 5
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 89,
+        "English": 93,
+        "Science": 90,
+        "History": 98
+      },
+      {
+        "month": "Oct",
+        "Math": 93,
+        "English": 96,
+        "Science": 92,
+        "History": 80
+      },
+      {
+        "month": "Nov",
+        "Math": 82,
+        "English": 86,
+        "Science": 96,
+        "History": 83
+      },
+      {
+        "month": "Dec",
+        "Math": 94,
+        "English": 80,
+        "Science": 87,
+        "History": 94
+      },
+      {
+        "month": "Jan",
+        "Math": 93,
+        "English": 94,
+        "Science": 77,
+        "History": 84
+      },
+      {
+        "month": "Feb",
+        "Math": 85,
+        "English": 76,
+        "Science": 80,
+        "History": 75
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 82,
+        "Problem Solving": 86,
+        "Reading Comprehension": 77
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 81,
+        "Problem Solving": 80,
+        "Reading Comprehension": 79
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 92,
+        "Problem Solving": 84,
+        "Reading Comprehension": 93
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 78,
+        "Problem Solving": 92,
+        "Reading Comprehension": 76
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 77,
+        "Problem Solving": 92,
+        "Reading Comprehension": 86
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 86,
+        "Problem Solving": 86,
+        "Reading Comprehension": 75
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 13
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 19
+      },
+      {
+        "game": "Science Quest",
+        "gain": 14
+      },
+      {
+        "game": "History Heroes",
+        "gain": 19
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      },
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      },
+      {
+        "name": "Geometry Genius",
+        "level": "3-4",
+        "description": "Master shapes, angles, and spatial reasoning through puzzles"
+      }
+    ],
+    "personalizedPlan": "Encourage journaling and reflection to improve articulation of ideas."
+  },
+  {
+    "id": "9",
+    "name": "Isabella Scott",
+    "grade": "3rd Grade",
+    "class": "3C",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Mrs. Green",
+    "email": "isabella.s@school.edu",
+    "gamesPlayed": 50,
+    "avgScore": 91,
+    "lastActive": "Today, 10:21 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 93,
+      "English": 89,
+      "Science": 94,
+      "History": 82
+    },
+    "skills": {
+      "Critical Thinking": 90,
+      "Problem Solving": 83,
+      "Reading Comprehension": 84,
+      "Mathematical Reasoning": 83,
+      "Scientific Inquiry": 95,
+      "Historical Analysis": 84
+    },
+    "strengths": [
+      "Quick to adapt to new learning tools and platforms",
+      "Creative problem solver with unique approaches",
+      "Demonstrates strong leadership in team-based tasks",
+      "Frequently helps peers understand difficult concepts"
+    ],
+    "areasToImprove": [
+      "Needs reminders for homework deadlines",
+      "Encourage more active participation in discussions",
+      "Could benefit from structured reading practice"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 79,
+        "plays": 15,
+        "completion": 90,
+        "avgTime": "18 min",
+        "achievements": 8
+      },
+      {
+        "name": "Word Explorer",
+        "score": 76,
+        "plays": 10,
+        "completion": 83,
+        "avgTime": "11 min",
+        "achievements": 5
+      },
+      {
+        "name": "Science Quest",
+        "score": 75,
+        "plays": 14,
+        "completion": 92,
+        "avgTime": "11 min",
+        "achievements": 7
+      },
+      {
+        "name": "History Heroes",
+        "score": 85,
+        "plays": 13,
+        "completion": 94,
+        "avgTime": "17 min",
+        "achievements": 5
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 83,
+        "English": 91,
+        "Science": 88,
+        "History": 83
+      },
+      {
+        "month": "Oct",
+        "Math": 78,
+        "English": 82,
+        "Science": 75,
+        "History": 76
+      },
+      {
+        "month": "Nov",
+        "Math": 88,
+        "English": 78,
+        "Science": 78,
+        "History": 95
+      },
+      {
+        "month": "Dec",
+        "Math": 96,
+        "English": 93,
+        "Science": 92,
+        "History": 77
+      },
+      {
+        "month": "Jan",
+        "Math": 79,
+        "English": 78,
+        "Science": 85,
+        "History": 87
+      },
+      {
+        "month": "Feb",
+        "Math": 93,
+        "English": 84,
+        "Science": 98,
+        "History": 97
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 80,
+        "Problem Solving": 87,
+        "Reading Comprehension": 97
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 89,
+        "Problem Solving": 80,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 79,
+        "Problem Solving": 89,
+        "Reading Comprehension": 80
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 82,
+        "Problem Solving": 78,
+        "Reading Comprehension": 79
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 97,
+        "Problem Solving": 83,
+        "Reading Comprehension": 87
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 81,
+        "Problem Solving": 76,
+        "Reading Comprehension": 96
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 19
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 18
+      },
+      {
+        "game": "Science Quest",
+        "gain": 16
+      },
+      {
+        "game": "History Heroes",
+        "gain": 10
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Eco Explorer",
+        "level": "Intermediate",
+        "description": "Learn about ecosystems, recycling, and biodiversity"
+      },
+      {
+        "name": "Reading Detective",
+        "level": "Advanced",
+        "description": "Explore themes and make inferences with text analysis games"
+      },
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      }
+    ],
+    "personalizedPlan": "Encourage journaling and reflection to improve articulation of ideas."
+  },
+  {
+    "id": "10",
+    "name": "Benjamin Adams",
+    "grade": "3rd Grade",
+    "class": "3A",
+    "avatar": "/placeholder.svg?height=128&width=128",
+    "teacher": "Ms. Baker",
+    "email": "benjamin.a@school.edu",
+    "gamesPlayed": 32,
+    "avgScore": 91,
+    "lastActive": "Today, 10:33 AM",
+    "progress": "Advanced",
+    "subjects": {
+      "Math": 92,
+      "English": 92,
+      "Science": 97,
+      "History": 78
+    },
+    "skills": {
+      "Critical Thinking": 98,
+      "Problem Solving": 97,
+      "Reading Comprehension": 79,
+      "Mathematical Reasoning": 93,
+      "Scientific Inquiry": 86,
+      "Historical Analysis": 84
+    },
+    "strengths": [
+      "Consistently completes assignments on time",
+      "Quick to adapt to new learning tools and platforms",
+      "Creative problem solver with unique approaches",
+      "Excels in time-bound assessments"
+    ],
+    "areasToImprove": [
+      "Encourage more active participation in discussions",
+      "Provide scaffolding for writing assignments",
+      "Introduce additional practice in data interpretation"
+    ],
+    "gamePerformance": [
+      {
+        "name": "Math Adventure",
+        "score": 85,
+        "plays": 10,
+        "completion": 97,
+        "avgTime": "14 min",
+        "achievements": 4
+      },
+      {
+        "name": "Word Explorer",
+        "score": 94,
+        "plays": 6,
+        "completion": 92,
+        "avgTime": "10 min",
+        "achievements": 6
+      },
+      {
+        "name": "Science Quest",
+        "score": 78,
+        "plays": 10,
+        "completion": 90,
+        "avgTime": "14 min",
+        "achievements": 8
+      },
+      {
+        "name": "History Heroes",
+        "score": 80,
+        "plays": 14,
+        "completion": 80,
+        "avgTime": "19 min",
+        "achievements": 4
+      }
+    ],
+    "monthlyProgress": [
+      {
+        "month": "Sep",
+        "Math": 89,
+        "English": 96,
+        "Science": 85,
+        "History": 96
+      },
+      {
+        "month": "Oct",
+        "Math": 97,
+        "English": 95,
+        "Science": 81,
+        "History": 82
+      },
+      {
+        "month": "Nov",
+        "Math": 79,
+        "English": 82,
+        "Science": 91,
+        "History": 76
+      },
+      {
+        "month": "Dec",
+        "Math": 98,
+        "English": 89,
+        "Science": 80,
+        "History": 98
+      },
+      {
+        "month": "Jan",
+        "Math": 82,
+        "English": 75,
+        "Science": 83,
+        "History": 90
+      },
+      {
+        "month": "Feb",
+        "Math": 88,
+        "English": 89,
+        "Science": 93,
+        "History": 89
+      }
+    ],
+    "skillDevelopment": [
+      {
+        "month": "Sep",
+        "Critical Thinking": 88,
+        "Problem Solving": 81,
+        "Reading Comprehension": 79
+      },
+      {
+        "month": "Oct",
+        "Critical Thinking": 87,
+        "Problem Solving": 81,
+        "Reading Comprehension": 77
+      },
+      {
+        "month": "Nov",
+        "Critical Thinking": 82,
+        "Problem Solving": 90,
+        "Reading Comprehension": 88
+      },
+      {
+        "month": "Dec",
+        "Critical Thinking": 94,
+        "Problem Solving": 89,
+        "Reading Comprehension": 83
+      },
+      {
+        "month": "Jan",
+        "Critical Thinking": 92,
+        "Problem Solving": 76,
+        "Reading Comprehension": 77
+      },
+      {
+        "month": "Feb",
+        "Critical Thinking": 83,
+        "Problem Solving": 96,
+        "Reading Comprehension": 98
+      }
+    ],
+    "learningGains": [
+      {
+        "game": "Math Adventure",
+        "gain": 10
+      },
+      {
+        "game": "Word Explorer",
+        "gain": 20
+      },
+      {
+        "game": "Science Quest",
+        "gain": 17
+      },
+      {
+        "game": "History Heroes",
+        "gain": 20
+      }
+    ],
+    "recommendedGames": [
+      {
+        "name": "Logic Lab",
+        "level": "Advanced",
+        "description": "Challenge your brain with logic puzzles and sequences"
+      },
+      {
+        "name": "World Time Travel",
+        "level": "Intermediate",
+        "description": "Experience important historical events in different eras"
+      },
+      {
+        "name": "Geometry Genius",
+        "level": "3-4",
+        "description": "Master shapes, angles, and spatial reasoning through puzzles"
+      }
+    ],
+    "personalizedPlan": "Use game-based assessments to increase engagement in weak areas."
+  }
+]

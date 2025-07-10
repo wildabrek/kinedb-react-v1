@@ -1,0 +1,1160 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-04-03T13:35:47Z",
+    "dataPoints": {
+      "students": 124,
+      "classes": 8,
+      "games": 15,
+      "assessments": 42,
+      "activities": 520
+    },
+    "timeRanges": {
+      "daily": "Last 24 hours",
+      "weekly": "Last 7 days",
+      "monthly": "Last 30 days",
+      "quarterly": "Last 90 days",
+      "yearly": "Last 365 days",
+      "custom": "Custom date range"
+    }
+  },
+  "dashboardSummary": {
+    "currentPeriod": {
+      "startDate": "2025-03-03T00:00:00Z",
+      "endDate": "2025-04-03T23:59:59Z",
+      "metrics": {
+        "totalStudents": 124,
+        "activeStudents": 118,
+        "newStudents": 5,
+        "totalClasses": 8,
+        "activeClasses": 7,
+        "totalGames": 15,
+        "gamesPlayed": 520,
+        "averageScore": 82,
+        "completionRate": 78,
+        "engagementRate": 85
+      },
+      "trends": {
+        "studentGrowth": {
+          "percentage": 4.2,
+          "direction": "up"
+        },
+        "scoreChange": {
+          "percentage": 3.1,
+          "direction": "up"
+        },
+        "engagementChange": {
+          "percentage": 5.5,
+          "direction": "up"
+        },
+        "completionChange": {
+          "percentage": 2.8,
+          "direction": "up"
+        }
+      }
+    },
+    "previousPeriod": {
+      "startDate": "2025-02-01T00:00:00Z",
+      "endDate": "2025-03-02T23:59:59Z",
+      "metrics": {
+        "totalStudents": 119,
+        "activeStudents": 112,
+        "newStudents": 3,
+        "totalClasses": 8,
+        "activeClasses": 7,
+        "totalGames": 14,
+        "gamesPlayed": 485,
+        "averageScore": 79.5,
+        "completionRate": 75.8,
+        "engagementRate": 80.5
+      }
+    },
+    "topPerformers": {
+      "students": [
+        { "id": "1", "name": "Emma Thompson", "score": 95, "improvement": 3.2 },
+        { "id": "9", "name": "Isabella Moore", "score": 93, "improvement": 2.8 },
+        { "id": "6", "name": "William Davis", "score": 91, "improvement": 4.5 },
+        { "id": "3", "name": "Olivia Johnson", "score": 90, "improvement": 2.1 },
+        { "id": "12", "name": "Mason Thomas", "score": 90, "improvement": 3.7 }
+      ],
+      "classes": [
+        { "id": 8, "name": "5B", "avgScore": 86, "improvement": 3.5 },
+        { "id": 1, "name": "3A", "avgScore": 85, "improvement": 2.8 },
+        { "id": 7, "name": "5A", "avgScore": 84, "improvement": 3.2 },
+        { "id": 6, "name": "4C", "avgScore": 83, "improvement": 2.5 },
+        { "id": 2, "name": "4B", "avgScore": 82, "improvement": 2.1 }
+      ],
+      "games": [
+        { "id": 1, "name": "Math Blaster", "popularity": 428, "avgScore": 82 },
+        { "id": 2, "name": "Word Wizard", "popularity": 356, "avgScore": 78 },
+        { "id": 3, "name": "Science Quest", "popularity": 289, "avgScore": 75 },
+        { "id": 4, "name": "History Heroes", "popularity": 245, "avgScore": 81 },
+        { "id": 5, "name": "Coding Capers", "popularity": 198, "avgScore": 73 }
+      ]
+    }
+  },
+  "timeSeriesData": {
+    "daily": {
+      "dates": ["2025-03-28", "2025-03-29", "2025-03-30", "2025-03-31", "2025-04-01", "2025-04-02", "2025-04-03"],
+      "metrics": {
+        "activeUsers": [98, 85, 92, 105, 112, 108, 118],
+        "gamesPlayed": [68, 52, 65, 78, 85, 82, 90],
+        "averageScores": [80.5, 79.8, 81.2, 82.5, 83.1, 82.8, 84.2],
+        "completionRates": [75.2, 74.5, 76.8, 77.5, 78.2, 77.9, 79.5],
+        "newUsers": [0, 1, 0, 2, 1, 0, 1]
+      }
+    },
+    "weekly": {
+      "weeks": ["Week 9", "Week 10", "Week 11", "Week 12", "Week 13"],
+      "metrics": {
+        "activeUsers": [410, 425, 435, 450, 465],
+        "gamesPlayed": [320, 345, 360, 385, 410],
+        "averageScores": [78.5, 79.2, 80.5, 81.8, 82.5],
+        "completionRates": [72.5, 73.8, 75.2, 76.5, 78.0],
+        "newUsers": [2, 3, 4, 3, 5]
+      }
+    },
+    "monthly": {
+      "months": ["Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025"],
+      "metrics": {
+        "activeUsers": [1650, 1580, 1720, 1850, 1920],
+        "gamesPlayed": [1250, 1180, 1320, 1450, 1520],
+        "averageScores": [76.2, 77.5, 78.8, 80.2, 82.0],
+        "completionRates": [70.5, 71.8, 73.2, 75.5, 77.8],
+        "newUsers": [8, 6, 10, 12, 15]
+      }
+    }
+  },
+  "studentAnalytics": {
+    "overview": {
+      "totalCount": 124,
+      "activeCount": 118,
+      "inactiveCount": 6,
+      "averageScore": 82,
+      "averageGamesPlayed": 42,
+      "averageTimePerSession": "16 min",
+      "gradeDistribution": {
+        "3rd": 45,
+        "4th": 42,
+        "5th": 37
+      },
+      "performanceDistribution": {
+        "90-100": 24,
+        "80-89": 48,
+        "70-79": 32,
+        "60-69": 15,
+        "below60": 5
+      }
+    },
+    "detailedMetrics": {
+      "byGrade": [
+        {
+          "grade": "3rd",
+          "count": 45,
+          "avgScore": 83.5,
+          "avgGamesPlayed": 38,
+          "topSubjects": ["Math", "Reading", "Science"],
+          "improvementRate": 4.2
+        },
+        {
+          "grade": "4th",
+          "count": 42,
+          "avgScore": 81.2,
+          "avgGamesPlayed": 42,
+          "topSubjects": ["Reading", "Math", "History"],
+          "improvementRate": 3.8
+        },
+        {
+          "grade": "5th",
+          "count": 37,
+          "avgScore": 84.8,
+          "avgGamesPlayed": 46,
+          "topSubjects": ["Science", "Math", "Reading"],
+          "improvementRate": 4.5
+        }
+      ],
+      "byClass": [
+        {
+          "classId": 1,
+          "className": "3A",
+          "count": 24,
+          "avgScore": 85,
+          "avgGamesPlayed": 40,
+          "topSubjects": ["Math", "Science", "Reading"],
+          "improvementRate": 4.5
+        },
+        {
+          "classId": 2,
+          "className": "4B",
+          "count": 22,
+          "avgScore": 82,
+          "avgGamesPlayed": 44,
+          "topSubjects": ["Reading", "Math", "History"],
+          "improvementRate": 3.9
+        },
+        {
+          "classId": 3,
+          "className": "3C",
+          "count": 23,
+          "avgScore": 79,
+          "avgGamesPlayed": 36,
+          "topSubjects": ["Reading", "Math", "Science"],
+          "improvementRate": 3.5
+        },
+        {
+          "classId": 4,
+          "className": "4A",
+          "count": 25,
+          "avgScore": 77,
+          "avgGamesPlayed": 38,
+          "topSubjects": ["Science", "Math", "Reading"],
+          "improvementRate": 3.2
+        },
+        {
+          "classId": 5,
+          "className": "3B",
+          "count": 21,
+          "avgScore": 81,
+          "avgGamesPlayed": 35,
+          "topSubjects": ["Math", "Reading", "Science"],
+          "improvementRate": 3.8
+        },
+        {
+          "classId": 6,
+          "className": "4C",
+          "count": 24,
+          "avgScore": 83,
+          "avgGamesPlayed": 42,
+          "topSubjects": ["Math", "Reading", "History"],
+          "improvementRate": 4.1
+        },
+        {
+          "classId": 7,
+          "className": "5A",
+          "count": 26,
+          "avgScore": 84,
+          "avgGamesPlayed": 45,
+          "topSubjects": ["Science", "Math", "Reading"],
+          "improvementRate": 4.3
+        },
+        {
+          "classId": 8,
+          "className": "5B",
+          "count": 25,
+          "avgScore": 86,
+          "avgGamesPlayed": 48,
+          "topSubjects": ["Math", "Science", "Reading"],
+          "improvementRate": 4.7
+        }
+      ],
+      "bySubject": [
+        {
+          "subject": "Math",
+          "avgScore": 84.5,
+          "totalGamesPlayed": 1850,
+          "improvementRate": 4.2,
+          "topSkills": ["Problem Solving", "Arithmetic", "Fractions"],
+          "challengeAreas": ["Division", "Word Problems", "Geometry"]
+        },
+        {
+          "subject": "Reading",
+          "avgScore": 82.8,
+          "totalGamesPlayed": 1620,
+          "improvementRate": 3.9,
+          "topSkills": ["Comprehension", "Vocabulary", "Phonics"],
+          "challengeAreas": ["Inference", "Context Clues", "Main Idea"]
+        },
+        {
+          "subject": "Science",
+          "avgScore": 83.2,
+          "totalGamesPlayed": 1480,
+          "improvementRate": 4.1,
+          "topSkills": ["Scientific Method", "Classification", "Observation"],
+          "challengeAreas": ["Hypothesis Testing", "Data Analysis", "Conclusions"]
+        },
+        {
+          "subject": "History",
+          "avgScore": 80.5,
+          "totalGamesPlayed": 1250,
+          "improvementRate": 3.6,
+          "topSkills": ["Chronology", "Key Events", "Historical Figures"],
+          "challengeAreas": ["Cause and Effect", "Primary Sources", "Context"]
+        },
+        {
+          "subject": "Geography",
+          "avgScore": 79.8,
+          "totalGamesPlayed": 980,
+          "improvementRate": 3.4,
+          "topSkills": ["Map Reading", "Continents", "Countries"],
+          "challengeAreas": ["Latitude/Longitude", "Climate Zones", "Landforms"]
+        }
+      ]
+    },
+    "progressTracking": {
+      "overall": {
+        "startingAverage": 76.5,
+        "currentAverage": 82.0,
+        "improvement": 5.5,
+        "projectedEndOfYear": 87.5,
+        "goalAttainment": 78
+      },
+      "bySkillCategory": [
+        {
+          "category": "Critical Thinking",
+          "startingLevel": 72,
+          "currentLevel": 79,
+          "improvement": 7,
+          "targetLevel": 85,
+          "progressPercentage": 70
+        },
+        {
+          "category": "Problem Solving",
+          "startingLevel": 75,
+          "currentLevel": 82,
+          "improvement": 7,
+          "targetLevel": 88,
+          "progressPercentage": 64
+        },
+        {
+          "category": "Memory",
+          "startingLevel": 78,
+          "currentLevel": 84,
+          "improvement": 6,
+          "targetLevel": 90,
+          "progressPercentage": 60
+        },
+        {
+          "category": "Comprehension",
+          "startingLevel": 74,
+          "currentLevel": 81,
+          "improvement": 7,
+          "targetLevel": 87,
+          "progressPercentage": 67
+        },
+        {
+          "category": "Application",
+          "startingLevel": 71,
+          "currentLevel": 78,
+          "improvement": 7,
+          "targetLevel": 85,
+          "progressPercentage": 64
+        }
+      ]
+    },
+    "individualStudents": [
+      {
+        "id": "1",
+        "name": "Emma Thompson",
+        "grade": "3rd",
+        "class": "3A",
+        "metrics": {
+          "overallScore": 95,
+          "gamesPlayed": 45,
+          "timeSpent": "11h 15m",
+          "completionRate": 92,
+          "improvementRate": 4.2
+        },
+        "subjectPerformance": [
+          { "subject": "Math", "score": 94, "improvement": 3.5 },
+          { "subject": "Reading", "score": 92, "improvement": 4.0 },
+          { "subject": "Science", "score": 96, "improvement": 5.0 },
+          { "subject": "History", "score": 93, "improvement": 4.5 }
+        ],
+        "skillsAssessment": [
+          { "skill": "Problem Solving", "level": 95, "improvement": 5 },
+          { "skill": "Critical Thinking", "level": 92, "improvement": 4 },
+          { "skill": "Memory", "level": 94, "improvement": 3 },
+          { "skill": "Comprehension", "level": 93, "improvement": 4 },
+          { "skill": "Application", "level": 91, "improvement": 5 }
+        ],
+        "recentActivity": [
+          { "date": "2025-04-03", "game": "Math Blaster", "score": 96, "timeSpent": "18m" },
+          { "date": "2025-04-02", "game": "Science Quest", "score": 94, "timeSpent": "22m" },
+          { "date": "2025-04-01", "game": "Word Wizard", "score": 92, "timeSpent": "15m" },
+          { "date": "2025-03-31", "game": "History Heroes", "score": 95, "timeSpent": "20m" },
+          { "date": "2025-03-30", "game": "Math Blaster", "score": 93, "timeSpent": "17m" }
+        ],
+        "recommendations": [
+          { "focus": "Advanced Math Concepts", "recommendedGames": ["Fraction Master", "Algebra Adventure"] },
+          { "focus": "Scientific Inquiry", "recommendedGames": ["Science Quest", "Lab Explorer"] },
+          { "focus": "Reading Comprehension", "recommendedGames": ["Word Wizard", "Reading Detective"] }
+        ]
+      }
+    ]
+  },
+  "classAnalytics": {
+    "overview": {
+      "totalCount": 8,
+      "activeCount": 7,
+      "inactiveCount": 1,
+      "averageSize": 23.75,
+      "averageScore": 82.1,
+      "averageGamesPlayed": 480,
+      "gradeDistribution": {
+        "3rd": 3,
+        "4th": 3,
+        "5th": 2
+      },
+      "performanceDistribution": {
+        "85-100": 2,
+        "80-84": 3,
+        "75-79": 2,
+        "below75": 1
+      }
+    },
+    "detailedMetrics": {
+      "byGrade": [
+        {
+          "grade": "3rd",
+          "classCount": 3,
+          "studentCount": 68,
+          "avgScore": 81.7,
+          "avgGamesPlayed": 460,
+          "topSubjects": ["Math", "Reading", "Science"],
+          "improvementRate": 4.0
+        },
+        {
+          "grade": "4th",
+          "classCount": 3,
+          "studentCount": 71,
+          "avgScore": 80.7,
+          "avgGamesPlayed": 457,
+          "topSubjects": ["Reading", "Math", "History"],
+          "improvementRate": 3.7
+        },
+        {
+          "grade": "5th",
+          "classCount": 2,
+          "studentCount": 51,
+          "avgScore": 85.0,
+          "avgGamesPlayed": 500,
+          "topSubjects": ["Science", "Math", "Reading"],
+          "improvementRate": 4.5
+        }
+      ],
+      "byTeacher": [
+        {
+          "teacher": "Ms. Johnson",
+          "classCount": 1,
+          "studentCount": 24,
+          "avgScore": 85,
+          "avgGamesPlayed": 520,
+          "topSubjects": ["Math", "Science", "Reading"],
+          "improvementRate": 4.5
+        },
+        {
+          "teacher": "Mr. Williams",
+          "classCount": 1,
+          "studentCount": 22,
+          "avgScore": 82,
+          "avgGamesPlayed": 480,
+          "topSubjects": ["Reading", "Math", "History"],
+          "improvementRate": 3.9
+        },
+        {
+          "teacher": "Ms. Davis",
+          "classCount": 2,
+          "studentCount": 49,
+          "avgScore": 81.5,
+          "avgGamesPlayed": 470,
+          "topSubjects": ["Science", "Reading", "Math"],
+          "improvementRate": 4.0
+        },
+        {
+          "teacher": "Mr. Miller",
+          "classCount": 1,
+          "studentCount": 25,
+          "avgScore": 77,
+          "avgGamesPlayed": 430,
+          "topSubjects": ["Science", "Math", "Reading"],
+          "improvementRate": 3.2
+        },
+        {
+          "teacher": "Ms. Wilson",
+          "classCount": 1,
+          "studentCount": 21,
+          "avgScore": 81,
+          "avgGamesPlayed": 410,
+          "topSubjects": ["Math", "Reading", "Science"],
+          "improvementRate": 3.8
+        },
+        {
+          "teacher": "Mr. Thompson",
+          "classCount": 2,
+          "studentCount": 49,
+          "avgScore": 84.5,
+          "avgGamesPlayed": 485,
+          "topSubjects": ["Math", "Science", "Reading"],
+          "improvementRate": 4.4
+        }
+      ]
+    },
+    "individualClasses": [
+      {
+        "id": 1,
+        "name": "3A",
+        "teacher": "Ms. Johnson",
+        "metrics": {
+          "studentCount": 24,
+          "averageScore": 85,
+          "gamesPlayed": 520,
+          "completionRate": 78,
+          "improvementRate": 4.5,
+          "attendanceRate": 92
+        },
+        "subjectPerformance": [
+          { "subject": "Math", "score": 87, "improvement": 5.0 },
+          { "subject": "Reading", "score": 84, "improvement": 4.2 },
+          { "subject": "Science", "score": 86, "improvement": 4.8 },
+          { "subject": "History", "score": 83, "improvement": 4.0 }
+        ],
+        "studentDistribution": {
+          "performanceBands": {
+            "90-100": 5,
+            "80-89": 12,
+            "70-79": 5,
+            "60-69": 2,
+            "below60": 0
+          },
+          "improvementRates": {
+            "highImprovement": 8,
+            "moderateImprovement": 12,
+            "lowImprovement": 4,
+            "noImprovement": 0
+          }
+        },
+        "weeklyActivity": [
+          { "day": "Monday", "gamesPlayed": 45, "avgScore": 84 },
+          { "day": "Tuesday", "gamesPlayed": 52, "avgScore": 86 },
+          { "day": "Wednesday", "gamesPlayed": 38, "avgScore": 83 },
+          { "day": "Thursday", "gamesPlayed": 65, "avgScore": 87 },
+          { "day": "Friday", "gamesPlayed": 48, "avgScore": 85 }
+        ],
+        "topStudents": [
+          { "id": "1", "name": "Emma Thompson", "score": 95, "improvement": 4.2 },
+          { "id": "6", "name": "William Davis", "score": 91, "improvement": 4.5 },
+          { "id": "9", "name": "Isabella Moore", "score": 93, "improvement": 3.8 },
+          { "id": "13", "name": "Charlotte Jackson", "score": 92, "improvement": 4.0 },
+          { "id": "16", "name": "Oliver Martin", "score": 91, "improvement": 3.5 }
+        ],
+        "recentGames": [
+          { "id": 1, "name": "Math Blaster", "date": "2025-04-03", "avgScore": 86, "participation": 22 },
+          { "id": 2, "name": "Word Wizard", "date": "2025-04-02", "avgScore": 84, "participation": 20 },
+          { "id": 3, "name": "Science Quest", "date": "2025-04-01", "avgScore": 85, "participation": 21 },
+          { "id": 4, "name": "History Heroes", "date": "2025-03-31", "avgScore": 83, "participation": 19 },
+          { "id": 5, "name": "Coding Capers", "date": "2025-03-30", "avgScore": 82, "participation": 18 }
+        ]
+      }
+    ]
+  },
+  "gameAnalytics": {
+    "overview": {
+      "totalCount": 15,
+      "activeCount": 14,
+      "inactiveCount": 1,
+      "totalPlays": 3250,
+      "averageScore": 78.5,
+      "averageTimePerPlay": "16.5 min",
+      "subjectDistribution": {
+        "Mathematics": 4,
+        "English": 3,
+        "Science": 3,
+        "History": 2,
+        "Geography": 2,
+        "Computer Science": 1
+      },
+      "levelDistribution": {
+        "Grade 3": 5,
+        "Grade 3-4": 6,
+        "Grade 4": 3,
+        "Grade 5": 1
+      }
+    },
+    "detailedMetrics": {
+      "bySubject": [
+        {
+          "subject": "Mathematics",
+          "gameCount": 4,
+          "totalPlays": 1050,
+          "avgScore": 80.5,
+          "avgTimePerPlay": "15 min",
+          "popularGames": ["Math Blaster", "Fraction Master"],
+          "skillsCovered": ["Addition", "Subtraction", "Multiplication", "Division", "Fractions"]
+        },
+        {
+          "subject": "English",
+          "gameCount": 3,
+          "totalPlays": 780,
+          "avgScore": 77.5,
+          "avgTimePerPlay": "14 min",
+          "popularGames": ["Word Wizard", "Grammar Quest"],
+          "skillsCovered": ["Vocabulary", "Spelling", "Grammar", "Reading Comprehension"]
+        },
+        {
+          "subject": "Science",
+          "gameCount": 3,
+          "totalPlays": 650,
+          "avgScore": 79.0,
+          "avgTimePerPlay": "18 min",
+          "popularGames": ["Science Quest", "Lab Explorer"],
+          "skillsCovered": ["Scientific Method", "Biology", "Earth Science", "Physics"]
+        },
+        {
+          "subject": "History",
+          "gameCount": 2,
+          "totalPlays": 420,
+          "avgScore": 78.5,
+          "avgTimePerPlay": "19 min",
+          "popularGames": ["History Heroes", "Time Traveler"],
+          "skillsCovered": ["Historical Events", "Famous Figures", "Timelines", "Cultural Awareness"]
+        },
+        {
+          "subject": "Geography",
+          "gameCount": 2,
+          "totalPlays": 280,
+          "avgScore": 76.0,
+          "avgTimePerPlay": "16 min",
+          "popularGames": ["Geography Explorer", "World Traveler"],
+          "skillsCovered": ["Map Reading", "Countries", "Landforms", "Cultural Geography"]
+        },
+        {
+          "subject": "Computer Science",
+          "gameCount": 1,
+          "totalPlays": 198,
+          "avgScore": 73.0,
+          "avgTimePerPlay": "25 min",
+          "popularGames": ["Coding Capers"],
+          "skillsCovered": ["Basic Coding", "Logic", "Problem Solving", "Algorithms"]
+        }
+      ],
+      "byGrade": [
+        {
+          "grade": "Grade 3",
+          "gameCount": 5,
+          "totalPlays": 950,
+          "avgScore": 77.0,
+          "avgTimePerPlay": "14 min",
+          "popularGames": ["Math Blaster", "Word Wizard"],
+          "skillsCovered": ["Basic Math", "Reading", "Vocabulary", "Science Basics"]
+        },
+        {
+          "grade": "Grade 3-4",
+          "gameCount": 6,
+          "totalPlays": 1450,
+          "avgScore": 79.5,
+          "avgTimePerPlay": "16 min",
+          "popularGames": ["Science Quest", "History Heroes"],
+          "skillsCovered": ["Intermediate Math", "Reading Comprehension", "Scientific Method", "Historical Events"]
+        },
+        {
+          "grade": "Grade 4",
+          "gameCount": 3,
+          "totalPlays": 650,
+          "avgScore": 78.0,
+          "avgTimePerPlay": "18 min",
+          "popularGames": ["Coding Capers", "Geography Explorer"],
+          "skillsCovered": ["Advanced Math", "Grammar", "Coding Basics", "Geography"]
+        },
+        {
+          "grade": "Grade 5",
+          "gameCount": 1,
+          "totalPlays": 200,
+          "avgScore": 82.0,
+          "avgTimePerPlay": "20 min",
+          "popularGames": ["Advanced Science Explorer"],
+          "skillsCovered": ["Advanced Science", "Critical Thinking", "Research Skills"]
+        }
+      ]
+    },
+    "individualGames": [
+      {
+        "id": 1,
+        "name": "Math Blaster",
+        "subject": "Mathematics",
+        "level": "Grade 3-4",
+        "metrics": {
+          "plays": 428,
+          "uniqueStudents": 112,
+          "avgScore": 82,
+          "avgTime": "15 min",
+          "completionRate": 88,
+          "popularityRank": 1
+        },
+        "skillsTargeted": [
+          { "skill": "Addition", "proficiency": 85 },
+          { "skill": "Subtraction", "proficiency": 83 },
+          { "skill": "Multiplication", "proficiency": 80 },
+          { "skill": "Division", "proficiency": 75 }
+        ],
+        "studentPerformance": {
+          "scoreBands": {
+            "90-100": 22,
+            "80-89": 45,
+            "70-79": 32,
+            "60-69": 10,
+            "below60": 3
+          },
+          "timeDistribution": {
+            "under10min": 25,
+            "10-15min": 48,
+            "15-20min": 32,
+            "over20min": 7
+          }
+        },
+        "classPerformance": [
+          { "classId": 1, "className": "3A", "avgScore": 84, "plays": 65 },
+          { "classId": 2, "className": "4B", "avgScore": 81, "plays": 58 },
+          { "classId": 7, "className": "5A", "avgScore": 85, "plays": 62 },
+          { "classId": 8, "className": "5B", "avgScore": 87, "plays": 68 },
+          { "classId": 3, "className": "3C", "avgScore": 79, "plays": 52 },
+          { "classId": 3, "className": "3C", "avgScore": 79, "plays": 52 }
+        ],
+        "weeklyTrends": [
+          { "week": "Week 9", "plays": 82, "avgScore": 80 },
+          { "week": "Week 10", "plays": 85, "avgScore": 81 },
+          { "week": "Week 11", "plays": 90, "avgScore": 82 },
+          { "week": "Week 12", "plays": 88, "avgScore": 82 },
+          { "week": "Week 13", "plays": 95, "avgScore": 83 }
+        ],
+        "topPerformers": [
+          { "id": "1", "name": "Emma Thompson", "score": 96, "timesPlayed": 12 },
+          { "id": "9", "name": "Isabella Moore", "score": 94, "timesPlayed": 10 },
+          { "id": "6", "name": "William Davis", "score": 93, "timesPlayed": 11 },
+          { "id": "3", "name": "Olivia Johnson", "score": 92, "timesPlayed": 9 },
+          { "id": "12", "name": "Mason Thomas", "score": 91, "timesPlayed": 10 }
+        ]
+      }
+    ]
+  },
+  "skillsAnalytics": {
+    "overview": {
+      "totalSkills": 35,
+      "categoriesCount": 6,
+      "mostDevelopedSkills": ["Addition", "Reading Comprehension", "Vocabulary"],
+      "leastDevelopedSkills": ["Division", "Scientific Method", "Historical Analysis"],
+      "skillCategoryDistribution": {
+        "Mathematics": 8,
+        "Language Arts": 7,
+        "Science": 6,
+        "Social Studies": 5,
+        "Critical Thinking": 5,
+        "Computer Science": 4
+      }
+    },
+    "detailedMetrics": {
+      "byCategory": [
+        {
+          "category": "Mathematics",
+          "skillCount": 8,
+          "avgProficiency": 81.5,
+          "mostDeveloped": "Addition",
+          "leastDeveloped": "Division",
+          "relatedGames": ["Math Blaster", "Fraction Master"],
+          "improvementRate": 4.2
+        },
+        {
+          "category": "Language Arts",
+          "skillCount": 7,
+          "avgProficiency": 80.2,
+          "mostDeveloped": "Reading Comprehension",
+          "leastDeveloped": "Grammar",
+          "relatedGames": ["Word Wizard", "Grammar Quest"],
+          "improvementRate": 3.8
+        },
+        {
+          "category": "Science",
+          "skillCount": 6,
+          "avgProficiency": 79.8,
+          "mostDeveloped": "Classification",
+          "leastDeveloped": "Scientific Method",
+          "relatedGames": ["Science Quest", "Lab Explorer"],
+          "improvementRate": 4.0
+        },
+        {
+          "category": "Social Studies",
+          "skillCount": 5,
+          "avgProficiency": 78.5,
+          "mostDeveloped": "Geography",
+          "leastDeveloped": "Historical Analysis",
+          "relatedGames": ["History Heroes", "Geography Explorer"],
+          "improvementRate": 3.5
+        },
+        {
+          "category": "Critical Thinking",
+          "skillCount": 5,
+          "avgProficiency": 80.0,
+          "mostDeveloped": "Problem Solving",
+          "leastDeveloped": "Logical Reasoning",
+          "relatedGames": ["Math Blaster", "Coding Capers"],
+          "improvementRate": 4.1
+        },
+        {
+          "category": "Computer Science",
+          "skillCount": 4,
+          "avgProficiency": 76.5,
+          "mostDeveloped": "Basic Coding",
+          "leastDeveloped": "Algorithms",
+          "relatedGames": ["Coding Capers"],
+          "improvementRate": 3.9
+        }
+      ],
+      "byGrade": [
+        {
+          "grade": "3rd",
+          "topSkills": ["Addition", "Reading Basics", "Vocabulary"],
+          "challengeAreas": ["Division", "Scientific Method", "Historical Events"],
+          "avgProficiency": 79.5,
+          "improvementRate": 4.0
+        },
+        {
+          "grade": "4th",
+          "topSkills": ["Multiplication", "Reading Comprehension", "Geography"],
+          "challengeAreas": ["Division", "Scientific Method", "Grammar"],
+          "avgProficiency": 80.2,
+          "improvementRate": 3.8
+        },
+        {
+          "grade": "5th",
+          "topSkills": ["Problem Solving", "Scientific Concepts", "Critical Thinking"],
+          "challengeAreas": ["Advanced Math", "Historical Analysis", "Coding"],
+          "avgProficiency": 82.5,
+          "improvementRate": 4.3
+        }
+      ]
+    },
+    "individualSkills": [
+      {
+        "id": 1,
+        "name": "Addition",
+        "category": "Mathematics",
+        "metrics": {
+          "overallProficiency": 85.5,
+          "studentsAssessed": 124,
+          "improvementRate": 4.5,
+          "relatedGamesCount": 3
+        },
+        "gradeBreakdown": [
+          { "grade": "3rd", "proficiency": 87.2, "studentCount": 45 },
+          { "grade": "4th", "proficiency": 85.0, "studentCount": 42 },
+          { "grade": "5th", "proficiency": 84.0, "studentCount": 37 }
+        ],
+        "classBreakdown": [
+          { "classId": 1, "className": "3A", "proficiency": 88.5 },
+          { "classId": 2, "className": "4B", "proficiency": 84.2 },
+          { "classId": 7, "className": "5A", "proficiency": 85.8 },
+          { "classId": 8, "className": "5B", "proficiency": 87.5 }
+        ],
+        "relatedGames": [
+          { "id": 1, "name": "Math Blaster", "effectiveness": 90 },
+          { "id": 7, "name": "Fraction Master", "effectiveness": 85 }
+        ],
+        "progressTrend": [
+          { "month": "Nov 2024", "proficiency": 80.5 },
+          { "month": "Dec 2024", "proficiency": 82.0 },
+          { "month": "Jan 2025", "proficiency": 83.2 },
+          { "month": "Feb 2025", "proficiency": 84.5 },
+          { "month": "Mar 2025", "proficiency": 85.5 }
+        ]
+      }
+    ]
+  },
+  "reportTemplates": {
+    "student": {
+      "individual": {
+        "sections": [
+          "Overview",
+          "Subject Performance",
+          "Skills Assessment",
+          "Progress Over Time",
+          "Game Activity",
+          "Recommendations"
+        ],
+        "metrics": [
+          "Overall Score",
+          "Subject Scores",
+          "Skill Levels",
+          "Improvement Rates",
+          "Time Spent",
+          "Games Played"
+        ],
+        "visualizations": [
+          "Performance Radar Chart",
+          "Progress Line Chart",
+          "Subject Comparison Bar Chart",
+          "Skill Distribution Pie Chart",
+          "Activity Timeline"
+        ]
+      },
+      "comparative": {
+        "sections": [
+          "Class Ranking",
+          "Peer Comparison",
+          "Grade-Level Benchmarks",
+          "Historical Comparison"
+        ],
+        "metrics": [
+          "Percentile Rank",
+          "Relative Strengths",
+          "Relative Weaknesses",
+          "Improvement vs. Peers"
+        ],
+        "visualizations": [
+          "Ranking Bar Chart",
+          "Benchmark Comparison",
+          "Peer Distribution Chart",
+          "Historical Trend Comparison"
+        ]
+      }
+    },
+    "class": {
+      "performance": {
+        "sections": [
+          "Class Overview",
+          "Student Distribution",
+          "Subject Performance",
+          "Skills Assessment",
+          "Game Activity",
+          "Progress Over Time"
+        ],
+        "metrics": [
+          "Average Score",
+          "Score Distribution",
+          "Subject Proficiency",
+          "Skill Levels",
+          "Participation Rates",
+          "Improvement Trends"
+        ],
+        "visualizations": [
+          "Score Distribution Histogram",
+          "Subject Performance Radar",
+          "Student Performance Heat Map",
+          "Progress Line Chart",
+          "Participation Bar Chart"
+        ]
+      },
+      "comparative": {
+        "sections": [
+          "Grade-Level Comparison",
+          "School Benchmarks",
+          "Historical Trends",
+          "Teacher Effectiveness"
+        ],
+        "metrics": [
+          "Relative Performance",
+          "Benchmark Achievement",
+          "Year-over-Year Growth",
+          "Teacher Impact Metrics"
+        ],
+        "visualizations": [
+          "Grade-Level Comparison Chart",
+          "Benchmark Radar Chart",
+          "Historical Trend Line",
+          "Teacher Effectiveness Comparison"
+        ]
+      }
+    },
+    "administrative": {
+      "overview": {
+        "sections": [
+          "School Performance",
+          "Grade-Level Analysis",
+          "Teacher Effectiveness",
+          "Curriculum Impact",
+          "Game Utilization",
+          "Resource Allocation"
+        ],
+        "metrics": [
+          "Overall Performance",
+          "Grade-Level Metrics",
+          "Teacher Metrics",
+          "Curriculum Effectiveness",
+          "Game Usage Statistics",
+          "Resource Efficiency"
+        ],
+        "visualizations": [
+          "School Performance Dashboard",
+          "Grade-Level Comparison Chart",
+          "Teacher Effectiveness Matrix",
+          "Curriculum Impact Analysis",
+          "Game Utilization Heat Map",
+          "Resource Allocation Pie Chart"
+        ]
+      },
+      "detailed": {
+        "sections": [
+          "Student Demographics",
+          "Performance Trends",
+          "Skill Gap Analysis",
+          "Intervention Effectiveness",
+          "Game Analytics",
+          "Resource Optimization"
+        ],
+        "metrics": [
+          "Demographic Breakdowns",
+          "Long-term Trends",
+          "Skill Gap Metrics",
+          "Intervention Impact",
+          "Game Effectiveness",
+          "Resource ROI"
+        ],
+        "visualizations": [
+          "Demographic Distribution Charts",
+          "Multi-year Trend Analysis",
+          "Skill Gap Heat Map",
+          "Intervention Impact Assessment",
+          "Game Effectiveness Matrix",
+          "Resource ROI Analysis"
+        ]
+      }
+    }
+  },
+  "visualizationOptions": {
+    "charts": [
+      {
+        "type": "line",
+        "applicableFor": ["Time Series Data", "Progress Tracking", "Trend Analysis"],
+        "options": {
+          "multiSeries": true,
+          "annotations": true,
+          "forecasting": true,
+          "comparisons": true
+        }
+      },
+      {
+        "type": "bar",
+        "applicableFor": ["Comparisons", "Rankings", "Distribution Analysis"],
+        "options": {
+          "horizontal": true,
+          "stacked": true,
+          "grouped": true,
+          "sortable": true
+        }
+      },
+      {
+        "type": "pie",
+        "applicableFor": ["Distribution", "Composition", "Proportion Analysis"],
+        "options": {
+          "donut": true,
+          "exploded": true,
+          "labeled": true,
+          "nested": true
+        }
+      },
+      {
+        "type": "radar",
+        "applicableFor": ["Skill Assessment", "Multi-dimensional Analysis", "Comparative Profiles"],
+        "options": {
+          "filled": true,
+          "multiSeries": true,
+          "normalized": true
+        }
+      },
+      {
+        "type": "heatmap",
+        "applicableFor": ["Performance Matrix", "Correlation Analysis", "Density Visualization"],
+        "options": {
+          "gradient": true,
+          "annotated": true,
+          "clustered": true
+        }
+      },
+      {
+        "type": "scatter",
+        "applicableFor": ["Correlation Analysis", "Distribution Patterns", "Outlier Detection"],
+        "options": {
+          "trendline": true,
+          "bubbles": true,
+          "quadrants": true,
+          "annotations": true
+        }
+      },
+      {
+        "type": "gauge",
+        "applicableFor": ["KPI Visualization", "Goal Achievement", "Performance Indicators"],
+        "options": {
+          "multiple": true,
+          "thresholds": true,
+          "animated": true
+        }
+      },
+      {
+        "type": "funnel",
+        "applicableFor": ["Process Flow", "Conversion Analysis", "Stage Progression"],
+        "options": {
+          "inverted": true,
+          "curved": true,
+          "annotated": true
+        }
+      }
+    ],
+    "maps": [
+      {
+        "type": "choropleth",
+        "applicableFor": ["Geographic Distribution", "Regional Performance", "Spatial Analysis"],
+        "options": {
+          "zoomable": true,
+          "drilldown": true,
+          "annotated": true
+        }
+      }
+    ],
+    "tables": [
+      {
+        "type": "data",
+        "applicableFor": ["Detailed Data View", "Sortable Records", "Filterable Data"],
+        "options": {
+          "sortable": true,
+          "filterable": true,
+          "paginated": true,
+          "exportable": true
+        }
+      },
+      {
+        "type": "pivot",
+        "applicableFor": ["Multi-dimensional Analysis", "Cross-tabulation", "Aggregation"],
+        "options": {
+          "drilldown": true,
+          "aggregation": true,
+          "conditional": true,
+          "exportable": true
+        }
+      },
+      {
+        "type": "heatTable",
+        "applicableFor": ["Performance Comparison", "Conditional Formatting", "Pattern Identification"],
+        "options": {
+          "gradient": true,
+          "thresholds": true,
+          "sortable": true
+        }
+      }
+    ],
+    "dashboards": [
+      {
+        "type": "executive",
+        "applicableFor": ["High-level Overview", "KPI Monitoring", "Strategic Insights"],
+        "components": ["KPI Cards", "Trend Charts", "Summary Tables", "Alert Indicators"]
+      },
+      {
+        "type": "operational",
+        "applicableFor": ["Daily Monitoring", "Tactical Decisions", "Performance Tracking"],
+        "components": ["Detailed Charts", "Activity Logs", "Filterable Tables", "Status Indicators"]
+      },
+      {
+        "type": "analytical",
+        "applicableFor": ["Deep Analysis", "Pattern Discovery", "Correlation Identification"],
+        "components": ["Interactive Charts", "Drill-down Capabilities", "Advanced Filters", "Comparison Tools"]
+      },
+      {
+        "type": "student-focused",
+        "applicableFor": ["Individual Performance", "Progress Tracking", "Personalized Insights"],
+        "components": ["Progress Charts", "Skill Radar", "Activity Timeline", "Recommendation Cards"]
+      },
+      {
+        "type": "teacher-focused",
+        "applicableFor": ["Class Management", "Student Monitoring", "Instructional Planning"],
+        "components": ["Class Overview", "Student Grid", "Subject Performance", "Intervention Suggestions"]
+      }
+    ]
+  }
+}

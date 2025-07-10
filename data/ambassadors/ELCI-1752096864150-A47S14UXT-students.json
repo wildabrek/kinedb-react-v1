@@ -1,0 +1,34 @@
+[
+  {
+    "anonymousId": "ANON-1752099689234-A20D945C",
+    "name": "Ahmet Yılmaz (Örnek)",
+    "schoolName": "Tataya Okulları",
+    "className": "3A",
+    "createdAt": "2025-07-09T22:21:29.236Z",
+    "paymentStatus": "unpaid"
+  },
+  {
+    "anonymousId": "ANON-1752100123456-B31E856D",
+    "name": "Zeynep Kaya (Örnek)",
+    "schoolName": "Bilgi Koleji",
+    "className": "2C",
+    "createdAt": "2025-07-10T11:15:00.123Z",
+    "paymentStatus": "paid"
+  },
+  {
+    "anonymousId": "ANON-1752100567890-C42F967E",
+    "name": "Mustafa Öztürk (Örnek)",
+    "schoolName": "Gelecek Okulları",
+    "className": "4A",
+    "createdAt": "2025-07-11T14:20:00.456Z",
+    "paymentStatus": "unpaid"
+  },
+  {
+    "anonymousId": "ANON-1752142552911-27498F85",
+    "schoolName": "tester",
+    "className": "1A",
+    "ambassadorId": "ELCI-1752096864150-A47S14UXT",
+    "createdAt": "2025-07-10T10:15:52.911Z",
+    "paymentStatus": "unpaid"
+  }
+]

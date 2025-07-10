@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ms. Johnson",
+      "email": "johnson@school.edu",
+      "password": "password123",
+      "role": "teacher",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "lastLogin": "2023-04-01T10:30:00Z",
+      "permissions": ["view_students", "edit_students", "view_classes", "edit_classes", "view_games"]
+    },
+    {
+      "id": "2",
+      "name": "Mr. Williams",
+      "email": "williams@school.edu",
+      "password": "password123",
+      "role": "teacher",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "lastLogin": "2023-04-02T09:15:00Z",
+      "permissions": ["view_students", "view_classes", "view_games"]
+    },
+    {
+      "id": "3",
+      "name": "Admin User",
+      "email": "admin@school.edu",
+      "password": "admin123",
+      "role": "admin",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "lastLogin": "2023-04-03T14:45:00Z",
+      "permissions": [
+        "view_students",
+        "edit_students",
+        "view_classes",
+        "edit_classes",
+        "view_games",
+        "edit_games",
+        "manage_users"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Teaching Assistant",
+      "email": "assistant@school.edu",
+      "password": "assistant123",
+      "role": "assistant",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "lastLogin": "2023-04-02T11:20:00Z",
+      "permissions": ["view_students", "view_classes", "view_games"]
+    },
+    {
+      "id": "5",
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "password": "password",
+      "role": "teacher",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "lastLogin": "2023-04-01T08:30:00Z",
+      "permissions": ["view_students", "edit_students", "view_classes", "edit_classes", "view_games"]
+    }
+  ]
+}

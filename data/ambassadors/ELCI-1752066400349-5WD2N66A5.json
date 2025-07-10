@@ -1,0 +1,139 @@
+{
+  "id": "ELCI-1752066400349-5WD2N66A5",
+  "account": {
+    "status": "active",
+    "packageName": "Silver"
+  },
+  "ambassadorInfo": {
+    "firstName": "Ahmet",
+    "lastName": "Ersan",
+    "email": "alperenersan2313@gmail.com",
+    "phone": "05321546934",
+    "school": "Kinekids",
+    "city": "Istanbul",
+    "district": "Beşiktaş",
+    "experience": "5 yıllık öğretmenlik deneyimi ve teknoloji entegrasyonu.",
+    "motivation": "Eğitimde teknolojinin gücüne inanıyorum ve KineKids'in bu vizyonunu daha fazla okula ulaştırmak istiyorum.",
+    "studentCount": "500+"
+  },
+  "applicationLifecycle": {
+    "submittedAt": "2025-07-09T13:06:40.349Z",
+    "paymentDeclaredAt": "2025-07-10T11:25:10.123Z",
+    "reviewedAt": "2025-07-10T14:00:00.000Z",
+    "reviewedBy": "Admin",
+    "notes": "Ödeme onayı yapıldı ve elçi aktive edildi."
+  },
+  "billingInfo": {
+    "name": "Ahmet Ersan",
+    "address": "Levent Mah. Çarşı Cad. No:12 Beşiktaş/İstanbul",
+    "taxOffice": "Beşiktaş Vergi Dairesi",
+    "taxNumber": "12345678901"
+  },
+  "performance": {
+    "totalStudents": 85,
+    "totalEarnings": 425,
+    "pendingEarnings": 75,
+    "thisMonthStudents": 15
+  },
+  "payment": {
+    "paymentInfo": {
+      "method": "iban",
+      "iban": "TR11 0001 2009 1234 5678 9012 34",
+      "paypal": ""
+    },
+    "paymentRequests": [
+      {
+        "requestId": "REQ-07-11-2025-1",
+        "amount": 75,
+        "requestedAt": "2025-07-11T09:30:00.000Z",
+        "status": "pending"
+      }
+    ],
+    "paymentHistory": [
+      {
+        "transactionId": "TR-20250605-A1",
+        "amount": 200,
+        "paidAt": "2025-06-05T11:00:00.000Z",
+        "method": "IBAN"
+      },
+      {
+        "transactionId": "TR-20250504-B2",
+        "amount": 150,
+        "paidAt": "2025-05-04T15:45:00.000Z",
+        "method": "IBAN"
+      }
+    ]
+  },
+  "engagement": {
+    "recentActivities": [
+      {
+        "student": "Elif Çınar",
+        "school": "Yıldız Koleji",
+        "date": "2025-07-10",
+        "earnings": 5
+      },
+      {
+        "student": "Kerem Aksoy",
+        "school": "Bilgi Okulları",
+        "date": "2025-07-09",
+        "earnings": 5
+      },
+      {
+        "student": "Selin Demir",
+        "school": "Yıldız Koleji",
+        "date": "2025-07-09",
+        "earnings": 5
+      }
+    ],
+    "monthlyStats": [
+      { "month": "Şubat 2025", "students": 10 },
+      { "month": "Mart 2025", "students": 18 },
+      { "month": "Nisan 2025", "students": 22 },
+      { "month": "Mayıs 2025", "students": 20 },
+      { "month": "Haziran 2025", "students": 15 }
+    ],
+    "gradeDistribution": [
+      { "grade": "1. Sınıf", "count": 20, "percentage": 24 },
+      { "grade": "2. Sınıf", "count": 30, "percentage": 35 },
+      { "grade": "3. Sınıf", "count": 25, "percentage": 29 },
+      { "grade": "4. Sınıf", "count": 10, "percentage": 12 }
+    ]
+  },
+  "gamification": {
+    "badges": [
+      {
+        "name": "Bronze Ambassador",
+        "requirement": "50+ öğrenci",
+        "earned": true,
+        "progress": 100
+      },
+      {
+        "name": "Silver Ambassador",
+        "requirement": "200+ öğrenci",
+        "earned": false,
+        "progress": 43
+      },
+      {
+        "name": "Gold Ambassador",
+        "requirement": "500+ öğrenci",
+        "earned": false,
+        "progress": 17
+      },
+      {
+        "name": "Diamond Ambassador",
+        "requirement": "1000+ öğrenci",
+        "earned": false,
+        "progress": 9
+      }
+    ]
+  },
+  "notifications": [
+    {
+      "id": "NOTIF-1",
+      "message": "Elçi paneline hoş geldiniz! Davet linkinizi paylaşarak kazanmaya başlayabilirsiniz.",
+      "type": "info",
+      "isRead": false,
+      "createdAt": "2025-07-10T22:34:28.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ELCI-1752058706703-O3XWL2Q2D",
+  "firstName": "ahmet",
+  "lastName": "ersan",
+  "email": "alperenersan4523@gmail.com",
+  "phone": "05321546934",
+  "school": "Kinekids",
+  "city": "istanbul",
+  "district": "istanbul",
+  "experience": "",
+  "motivation": "sdfwtwerwerewr",
+  "studentCount": "500+",
+  "region": "",
+  "status": "active",
+  "submittedAt": "2025-07-09T10:58:26.703Z",
+  "performance": {
+    "totalStudents": 0,
+    "totalEarnings": 0,
+    "pendingEarnings": 0,
+    "thisMonthStudents": 0
+  },
+  "recentActivities": [],
+  "monthlyStats": [],
+  "gradeDistribution": [],
+  "badges": [
+    {
+      "name": "Bronze Ambassador",
+      "requirement": "10 öğrenci",
+      "earned": false,
+      "progress": 0
+    },
+    {
+      "name": "Silver Ambassador",
+      "requirement": "50 öğrenci",
+      "earned": false,
+      "progress": 0
+    }
+  ],
+  "paymentHistory": [],
+  "paymentInfo": {
+    "method": "",
+    "iban": "",
+    "paypal": ""
+  }
+}
