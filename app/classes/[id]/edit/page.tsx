@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useRouter, useParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,16 +12,22 @@ import { Switch } from "@/components/ui/switch"
 import { useToast } from "@/components/ui/use-toast"
 import { ArrowLeft, Loader2 } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { API_BASE_URL, getClassesBySchoolId } from "@/lib/api"
+import { API_BASE_URL } from "@/lib/api"
 
-export default function EditClassPage() {
+// Sayfa props'larının bir Promise içerebileceğini belirten tür tanımı.
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function EditClassPage({ params }: PageProps) {
   const { toast } = useToast()
   const router = useRouter()
-  const params = useParams() as { id: string }
   const { translate: t } = useLanguage()
-  const classId = params.id
 
+  // ID'yi asenkron olarak çözmek ve veriyi tutmak için state'ler
+  const [classId, setClassId] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     teacher_id: "",
@@ -34,16 +40,52 @@ export default function EditClassPage() {
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [schools, setSchools] = useState<{ school_id: number; school_name: string }[]>([])
-  const [teachers, setTeachers] = useState<{ teacher_id: number; name: string; school_id: number }[]>([])
+  const [teachers, setTeachers] = useState<{ teacher_id: number; first_name: string; last_name: string; school_id: number }[]>([])
 
+  // HATA DÜZELTİLDİ: useParams hook'u kaldırıldı.
+
+  // 1. Adım: Promise olan 'params' içinden ID'yi çöz ve state'e ata.
   useEffect(() => {
+    async function getParams() {
+      try {
+        const resolvedParams = await params
+        if (resolvedParams && resolvedParams.id) {
+          const id = resolvedParams.id;
+          if (id) {
+            setClassId(id)
+          } else {
+            toast({ title: "Error", description: "Invalid Class ID format.", variant: "destructive" })
+            router.push("/classes")
+          }
+        }
+      } catch (error) {
+        console.error("Failed to resolve params:", error)
+        toast({ title: "Error", description: "Could not load page parameters.", variant: "destructive" })
+        router.push("/classes")
+      }
+    }
+    getParams()
+  }, [params, router, toast])
+
+
+  // 2. Adım: 'classId' state'i dolduktan sonra bu effect çalışır ve veriyi çeker.
+  useEffect(() => {
+    if (classId === null) {
+        return; // Henüz ID çözülmediyse bekle.
+    }
+
     async function fetchData() {
+      setLoading(true);
       try {
         const [schoolsRes, teachersRes, classRes] = await Promise.all([
           fetch(`${API_BASE_URL}/schools`),
           fetch(`${API_BASE_URL}/teachers`),
           fetch(`${API_BASE_URL}/classes/${classId}`)
         ])
+
+        if (!schoolsRes.ok || !teachersRes.ok || !classRes.ok) {
+            throw new Error("Failed to fetch initial data");
+        }
 
         const schoolsData = await schoolsRes.json()
         const teachersData = await teachersRes.json()
@@ -70,6 +112,8 @@ export default function EditClassPage() {
           variant: "destructive",
         })
         router.push("/classes")
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -108,7 +152,7 @@ export default function EditClassPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!validateForm()) {
+    if (!validateForm() || classId === null) {
       toast({
         title: t("Validation Error"),
         description: t("Please fill in all required fields"),
@@ -164,6 +208,14 @@ export default function EditClassPage() {
 
   const handleCancel = () => {
     router.push("/classes")
+  }
+
+  if (loading || classId === null) {
+    return (
+        <div className="flex items-center justify-center h-screen">
+            <Loader2 className="h-12 w-12 animate-spin text-primary" />
+        </div>
+    )
   }
 
   return (

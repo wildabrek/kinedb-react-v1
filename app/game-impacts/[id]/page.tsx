@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter, useParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -11,18 +11,55 @@ import { Loader2, ArrowLeft, Edit, GamepadIcon, Target, Star, BookOpen, Zap, Ale
 import { getGameImpact, getPossibleStrengths, getPossibleAreas } from "@/lib/api"
 import type { GameImpact, PossibleStrength, PossibleArea } from "@/lib/api"
 
-export default function GameImpactDetailPage({ params }: { params: { id: string } }) {
+// Sayfa props'larının bir Promise içerebileceğini belirten tür tanımı.
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default function GameImpactDetailPage({ params }: PageProps) {
   const router = useRouter()
   const { toast } = useToast()
+
+  // Asenkron olarak çözülecek `gameName` için state
+  const [gameName, setGameName] = useState<string | null>(null)
+
   const [gameImpact, setGameImpact] = useState<GameImpact | null>(null)
   const [strengths, setStrengths] = useState<PossibleStrength[]>([])
   const [areas, setAreas] = useState<PossibleArea[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const {id} = useParams()
-  const gameName = decodeURIComponent(id)
 
+  // HATA DÜZELTİLDİ: useParams hook'u kaldırıldı.
+
+  // 1. Adım: Promise olan 'params' içinden ID'yi çöz ve gameName'i state'e ata.
   useEffect(() => {
+    async function getParams() {
+      try {
+        const resolvedParams = await params
+        if (resolvedParams && resolvedParams.id) {
+          // URL'den gelen ID'yi decode et
+          const decodedGameName = decodeURIComponent(resolvedParams.id)
+          setGameName(decodedGameName)
+        } else {
+            toast({ title: "Error", description: "Game name not found in URL.", variant: "destructive" })
+            router.push("/game-impacts")
+        }
+      } catch (err) {
+        console.error("Failed to resolve params:", err)
+        toast({ title: "Error", description: "Could not load page parameters.", variant: "destructive" })
+        router.push("/game-impacts")
+      }
+    }
+    getParams()
+  }, [params, router, toast])
+
+  // 2. Adım: 'gameName' state'i dolduktan sonra bu effect çalışır ve veriyi çeker.
+  useEffect(() => {
+    // Henüz gameName çözülmediyse bekle.
+    if (gameName === null) {
+      return
+    }
+
     async function loadData() {
       try {
         setLoading(true)
@@ -32,6 +69,7 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
         const impact = await getGameImpact(gameName)
         if (!impact) {
           setError(`Game impact for "${gameName}" not found`)
+          setLoading(false)
           return
         }
         setGameImpact(impact)
@@ -62,11 +100,6 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
     const strength = strengths.find((s) => String(s.id) === String(id));
     return strength ? strength.name : id;
   };
-  const getStrengthName = (id: string) => {
-    const strength = strengths.find((s) => s.id === id)
-    return strength ? strength.name : id
-  }
-
 
   // Helper function to get area label by ID
   const getAreaLabel = (id: string) => {
@@ -113,9 +146,7 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
   if (!gameImpact) {
     return null
   }
-  console.log("Strengths list:", strengths)
 
-  console.log(gameImpact.game_name)
   return (
     <div className="container mx-auto py-6 space-y-6">
       <div className="flex items-center justify-between">
@@ -129,7 +160,7 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
             {gameName}
           </h1>
         </div>
-        <Button onClick={() => router.push(`/game-impacts/${encodeURIComponent(gameName)}/edit`)}>
+        <Button onClick={() => router.push(`/game-impacts/${encodeURIComponent(gameName || '')}/edit`)}>
           <Edit className="h-4 w-4 mr-2" />
           Edit Game Impact
         </Button>
@@ -221,7 +252,6 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
                 {gameImpact.add_strengths.map((strengthId) => (
                   <Badge key={strengthId} variant="outline" className="mr-2 mb-2 bg-yellow-50">
                     {getStrengthLabel(strengthId)}
-
                   </Badge>
                 ))}
               </div>
@@ -295,5 +325,4 @@ export default function GameImpactDetailPage({ params }: { params: { id: string 
       </div>
     </div>
   )
-
 }
