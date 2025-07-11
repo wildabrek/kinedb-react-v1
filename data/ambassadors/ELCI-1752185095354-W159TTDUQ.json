@@ -1,0 +1,86 @@
+{
+  "id": "ELCI-1752185095354-W159TTDUQ",
+  "account": {
+    "status": "active",
+    "packageName": "Diamond"
+  },
+  "ambassadorInfo": {
+    "firstName": "serra",
+    "lastName": "özbek",
+    "email": "serraozbek@gmail.com",
+    "phone": "05321546934",
+    "school": "Kinekids",
+    "city": "istanbul",
+    "district": "istanbul",
+    "motivation": "çünkü"
+  },
+  "applicationLifecycle": {
+    "submittedAt": "2025-07-10T22:04:55.354Z",
+    "paymentDeclaredAt": "2025-07-10T22:09:05.220Z",
+    "reviewedAt": "2025-07-10T22:09:23.849Z",
+    "reviewedBy": "Admin"
+  },
+  "billingInfo": {
+    "name": "serra özbek",
+    "address": "33rwerewr",
+    "taxOffice": "gdgfdg",
+    "taxNumber": "43423432"
+  },
+  "performance": {
+    "totalStudents": 0,
+    "totalEarnings": 0,
+    "pendingEarnings": 0,
+    "thisMonthStudents": 0
+  },
+  "engagement": {
+    "recentActivities": [],
+    "monthlyStats": [],
+    "gradeDistribution": []
+  },
+  "gamification": {
+    "badges": [
+      {
+        "name": "Bronze Ambassador",
+        "requirement": "50+ öğrenci",
+        "earned": false,
+        "progress": 0
+      },
+      {
+        "name": "Silver Ambassador",
+        "requirement": "200+ öğrenci",
+        "earned": false,
+        "progress": 0
+      },
+      {
+        "name": "Gold Ambassador",
+        "requirement": "500+ öğrenci",
+        "earned": false,
+        "progress": 0
+      },
+      {
+        "name": "Diamond Ambassador",
+        "requirement": "1000+ öğrenci",
+        "earned": false,
+        "progress": 0
+      }
+    ]
+  },
+  "payment": {
+    "paymentInfo": {
+      "method": "",
+      "iban": "",
+      "paypal": ""
+    },
+    "paymentRequests": [],
+    "paymentHistory": []
+  },
+  "notifications": [
+    {
+      "id": "NOTIF-1",
+      "message": "Elçi paneline hoş geldiniz!",
+      "type": "info",
+      "isRead": false,
+      "createdAt": "2025-07-10T22:09:23.841Z"
+    }
+  ]
+}
